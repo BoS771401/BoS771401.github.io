@@ -22,11 +22,11 @@ vrije-opdracht
 introductie
 doel-van-de-opdracht
 planning-32-uur
-fase-1-oriëntatie-en-literatuur-6-uur
-fase-2-opzetten-van-een-basis-registry-8-uur
-fase-3-integratieconcept-met-mcp-langchain-8-uur
-fase-4-workflowstructuur-met-langgraph-6-uur
-fase-5-rapportage-en-afronding-4-uur
+fase-1-oriëntatie-en-literatuur-6-uur-4-mei-2026
+fase-2-opzetten-van-een-basis-registry-8-uur-7-mei-2026
+fase-3-integratieconcept-met-mcp-langchain-8-uur-10-mei-2026
+fase-4-workflowstructuur-met-langgraph-6-uur-11-mei-2026
+fase-5-rapportage-en-afronding-4-uur-21-mei-2026
 eindproduct
 opdracht-3a-en-b
 opdracht-4a

@@ -15,49 +15,7 @@ Doel: de analyse reproduceerbaar uitwerken met RMarkdown, inclusief visualisatie
 # data inlezen
 data <- read_excel("/home/bo.steinschuld/dsfb2_workflows_portfolio/data_raw/CE.LIQ.FLOW.062_Tidydata.xlsx")
 
-glimpse(data)
-```
 
-```
-## Rows: 360
-## Columns: 34
-## $ plateRow            <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-## $ plateColumn         <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-## $ vialNr              <dbl> 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 1, 1,…
-## $ dropCode            <chr> "a", "b", "c", "d", "e", "a", "b", "c", "d", "e", …
-## $ expType             <chr> "experiment", "experiment", "experiment", "experim…
-## $ expReplicate        <dbl> 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,…
-## $ expName             <chr> "CE.LIQ.FLOW.062", "CE.LIQ.FLOW.062", "CE.LIQ.FLOW…
-## $ expDate             <dttm> 2020-11-30, 2020-11-30, 2020-11-30, 2020-11-30, 2…
-## $ expResearcher       <chr> "Sergio Reijnders - Ellis Herder", "Sergio Reijnde…
-## $ expTime             <dbl> 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68…
-## $ expUnit             <chr> "hour", "hour", "hour", "hour", "hour", "hour", "h…
-## $ expVolumeCounted    <dbl> 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50…
-## $ RawData             <dbl> 44, 37, 45, 47, 41, 35, 41, 36, 40, 38, 44, 48, 43…
-## $ compCASRN           <chr> "24157-81-1", "24157-81-1", "24157-81-1", "24157-8…
-## $ compName            <chr> "2,6-diisopropylnaphthalene", "2,6-diisopropylnaph…
-## $ compConcentration   <chr> "4.99", "4.99", "4.99", "4.99", "4.99", "4.99", "4…
-## $ compUnit            <chr> "nM", "nM", "nM", "nM", "nM", "nM", "nM", "nM", "n…
-## $ compDelivery        <chr> "Liquid", "Liquid", "Liquid", "Liquid", "Liquid", …
-## $ compVehicle         <chr> "controlVehicleA", "controlVehicleA", "controlVehi…
-## $ elegansStrain       <chr> "N2", "N2", "N2", "N2", "N2", "N2", "N2", "N2", "N…
-## $ elegansInput        <dbl> 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25…
-## $ bacterialStrain     <chr> "OP50", "OP50", "OP50", "OP50", "OP50", "OP50", "O…
-## $ bacterialTreatment  <chr> "heated", "heated", "heated", "heated", "heated", …
-## $ bacterialOD600      <dbl> 0.743, 0.743, 0.743, 0.743, 0.743, 0.743, 0.743, 0…
-## $ bacterialConcX      <dbl> 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,…
-## $ bacterialVolume     <dbl> 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, …
-## $ bacterialVolUnit    <chr> "ul", "ul", "ul", "ul", "ul", "ul", "ul", "ul", "u…
-## $ incubationVial      <chr> "1,5 glass vial", "1,5 glass vial", "1,5 glass via…
-## $ incubationVolume    <dbl> 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 10…
-## $ incubationUnit      <chr> "ul", "ul", "ul", "ul", "ul", "ul", "ul", "ul", "u…
-## $ incubationMethod    <chr> "rockroll", "rockroll", "rockroll", "rockroll", "r…
-## $ incubationRPM       <dbl> 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35…
-## $ bubble              <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
-## $ incubateTemperature <dbl> 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20…
-```
-
-``` r
 data %>%
   select(RawData, compName, compConcentration, expType) %>%
   summary()
@@ -97,16 +55,7 @@ data <- data %>%
     expType           = as.factor(expType),
     compConcentration = as.numeric(compConcentration)
   )
-```
 
-```
-## Warning: There was 1 warning in `mutate()`.
-## ℹ In argument: `compConcentration = as.numeric(compConcentration)`.
-## Caused by warning:
-## ! NAs introduced by coercion
-```
-
-``` r
 str(data %>% select(RawData, compName, compConcentration, expType))
 ```
 
@@ -151,22 +100,12 @@ ggplot(data,
   )
 ```
 
-```
-## Warning in scale_x_log10(labels = scales::label_number(), breaks =
-## scales::log_breaks()): log-10 transformation introduced infinite values.
-```
-
-```
-## Warning: Removed 6 rows containing missing values or values outside the scale range
-## (`geom_point()`).
-```
-
 <img src="05_reproduceerbaar_onderzoek_files/figure-html/scatterplot-1.png" width="672" />
 
 
 
 ``` r
-# 1. Controleer datatypes
+# Controleer datatypes
 
 data <- data %>%
   mutate(
@@ -177,7 +116,7 @@ data <- data %>%
   )
 
 
-# 2. Bereken gemiddelde negatieve controle
+# Bereken gemiddelde negatieve controle
 
 neg_mean <- data %>%
   filter(expType == "controlNegative") %>%
@@ -192,13 +131,13 @@ neg_mean   # handig om te printen
 ```
 
 ``` r
-# 3. Normaliseer alle waarden
+# Normaliseer alle waarden
 
 data_norm <- data %>%
   mutate(RawData_norm = RawData / neg_mean)
 
 
-# 4. Scatterplot met genormaliseerde waarden
+# Scatterplot met genormaliseerde waarden
 
 ggplot(data_norm,
        aes(x = compConcentration,
@@ -220,16 +159,6 @@ ggplot(data_norm,
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
-```
-
-```
-## Warning in scale_x_log10(labels = scales::label_number(), breaks =
-## scales::log_breaks()): log-10 transformation introduced infinite values.
-```
-
-```
-## Warning: Removed 6 rows containing missing values or values outside the scale range
-## (`geom_point()`).
 ```
 
 <img src="05_reproduceerbaar_onderzoek_files/figure-html/nieuwe genornaliseerde scatterplot-1.png" width="672" />
@@ -261,18 +190,18 @@ Om de resultaten tussen verschillende condities en concentraties goed te kunnen 
 __stappenplan voor vervolgonderzoek__
 
 ``` r
-# let op: deze code wordt niet uitgevoerd, alleen laten zien!
+# let op: deze code voer ik niet uit, dit is alleen het stappenplan!
 # Deze code voert alle stappen uit die nodig zijn om een 
 # dose–response curve te fitten en de IC50 te bepalen.
 
-# 1. Laad benodigde packages ---------------------------------
+# Laad benodigde packages 
 # drc = dose-response modelling
 # tidyverse = data manipulatie en plotting
 install.packages("drc", dependencies = TRUE)
 library(drc)
 library(tidyverse)
 
-# 2. Selecteer één compound voor de analyse -------------------
+# Selecteer één compound voor de analyse 
 # Kies hier de naam van het compound dat je wilt analyseren.
 compound_of_interest <- "2,6-diisopropylnaphthalene"
 
@@ -290,7 +219,7 @@ dose_data <- data_norm %>%
 head(dose_data)
 
 
-# 3. Visualiseer ruwe dose–response relatie -------------------
+# Visualiseer ruwe dose–response relatie 
 # Dit is een snelle check om te zien of er een dalende trend is.
 ggplot(dose_data,
        aes(x = compConcentration, y = RawData_norm)) +
@@ -304,7 +233,7 @@ ggplot(dose_data,
   )
 
 
-# 4. Fit een 4-parameter log-logistisch model (LL.4) ----------
+# Fit een 4-parameter log-logistisch model (LL.4) 
 # LL.4 heeft vier parameters:
 # - Lower: minimale respons
 # - Upper: maximale respons
@@ -320,7 +249,7 @@ m_LL4 <- drm(
 summary(m_LL4)
 
 
-# 5. Plot de dose–response curve ------------------------------
+# Plot de dose–response curve 
 # Dit geeft een nette S-curve met de ruwe punten erbij.
 plot(
   m_LL4,
@@ -331,18 +260,15 @@ plot(
 )
 
 
-# 6. Bepaal de IC50 -------------------------------------------
+# Bepaal de IC50 
 # ED() = Effective Dose
 # ED(model, 50) = concentratie waarbij 50% effect optreedt
 IC50_result <- ED(m_LL4, 50, interval = "delta")
 IC50_result
 
-# Output bevat:
-# - Estimate = IC50
-# - Lower / Upper = betrouwbaarheidsinterval
 
 
-# 7. (Optioneel) Vergelijk modellen ---------------------------
+# Vergelijk modellen 
 # Soms is een 3-parameter model (LL.3) beter.
 m_LL3 <- drm(
   RawData_norm ~ compConcentration,
@@ -367,15 +293,15 @@ https://doi.org/10.1371/journal.pcbi.1013229
 ## Onderzoeksvraag
 
 De centrale onderzoeksvraag van het artikel is:  
-**Hoe hebben COVID‑19‑maatregelen (zoals lockdowns, mondmaskers en verminderde sociale interactie) de transmissie en sterfte van influenza beïnvloed vóór, tijdens en na de COVID‑19‑pandemie, en verschillen deze effecten tussen leeftijdsgroepen en influenzastammen?**
+"Hoe hebben COVID‑19‑maatregelen (zoals lockdowns, mondmaskers en verminderde sociale interactie) de transmissie en sterfte van influenza beïnvloed vóór, tijdens en na de COVID‑19‑pandemie, en verschillen deze effecten tussen leeftijdsgroepen en influenzastammen?"
 
 ## Samenvatting van methode en resultaten
 
 ### Methode 
 De auteurs gebruikten een combinatie van:
-- **age‑structured epidemiologische modellen** (verschillende leeftijdsgroepen),
-- **multi‑strain influenza‑modellen** (influenza A en B),
-- en **Amerikaanse influenza‑data** uit drie periodes:
+- age‑structured epidemiologische modellen (verschillende leeftijdsgroepen),
+- multi‑strain influenza‑modellen (influenza A en B),
+- en Amerikaanse influenza‑data uit drie periodes:
   - pre‑pandemie (2016–2019),
   - pandemie (2022–2023),
   - post‑pandemie (2023–2024).
@@ -383,29 +309,29 @@ De auteurs gebruikten een combinatie van:
 De modellen werden gekalibreerd op deze datasets om veranderingen in transmissie, infectiviteit en mortaliteit te kwantificeren.
 
 ### Resultaten
-- **Volwassen influenza‑transmissie daalde sterk tijdens de COVID‑19‑pandemie**, maar herstelde snel na het opheffen van maatregelen.
-- **Transmissie onder kinderen bleef opvallend stabiel**, ondanks de pandemie.
-- **Influenza‑mortaliteit steeg tijdelijk** tijdens de pandemie, waarschijnlijk door verstoringen in de gezondheidszorg.
-- **Influenza A** liet een duidelijke daling zien tijdens de pandemie en herstelde daarna.
-- **Influenza B** vertoonde meer variabele patronen.
-- De auteurs concluderen dat de impact van COVID‑19‑maatregelen op influenza **groot maar tijdelijk** was, en dat influenza‑transmissie opmerkelijk **resilient** is.
+- Volwassen influenza‑transmissie daalde sterk tijdens de COVID‑19‑pandemie, maar herstelde snel na het opheffen van maatregelen.
+- Transmissie onder kinderen bleef opvallend stabiel, ondanks de pandemie.
+- Influenza‑mortaliteit steeg tijdelijk tijdens de pandemie, waarschijnlijk door verstoringen in de gezondheidszorg.
+- Influenza A liet een duidelijke daling zien tijdens de pandemie en herstelde daarna.
+- Influenza B vertoonde meer variabele patronen.
+- De auteurs concluderen dat de impact van COVID‑19 maatregelen op influenza groot maar tijdelijk was, en dat influenza‑transmissie opmerkelijk resilient is.
 
 ## Beoordeling van reproduceerbaarheid volgens transparantiecriteria
 
 ### Study Purpose
 **Ja**  
-Het artikel formuleert duidelijk het doel van het onderzoek: het kwantificeren van veranderingen in influenza‑transmissie en mortaliteit vóór, tijdens en na de COVID‑19‑pandemie.
+Het artikel formuleert duidelijk het doel van het onderzoek: het kwantificeren van veranderingen in influenza‑transmissie en mortaliteit vóór, tijdens en na de COVID‑19 pandemie.
 
 ### Data Availability Statement
 **Ja**  
-Er is een aparte *Data Availability* sectie waarin staat dat alle gebruikte data publiek toegankelijk is.
+Er is een aparte Data Availability sectie waarin staat dat alle gebruikte data publiek toegankelijk is.
 
 ### Data Location
 **CDC influenza surveillance databases**  
 De auteurs verwijzen naar openbare datasets van de Amerikaanse Centers for Disease Control and Prevention (CDC).
 
 ### Study Location
-**Ja — Verenigde Staten**  
+**Ja : Verenigde Staten**  
 In de methodesectie staat dat de analyses gebaseerd zijn op Amerikaanse influenza‑data.
 
 ### Author Review
@@ -418,7 +344,7 @@ Er worden uitsluitend geaggregeerde publieke surveillance‑data gebruikt; er zi
 
 ### Funding Statement
 **Ja**  
-Het artikel bevat een duidelijke *Funding Statement* waarin financieringsbronnen worden vermeld.
+Het artikel bevat een duidelijke Funding Statement waarin financieringsbronnen worden vermeld.
 
 ### Code Availability
 **Ja**  

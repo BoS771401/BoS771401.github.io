@@ -8,7 +8,7 @@ output: html_document
 # opdracht 1b
 ## vraag 1
 ### Waar wil ik over 1–2 jaar zijn?
-Over één tot twee jaar wil ik starten met een universitaire masteropleiding, specifiek de master Bioinformatics of de master Data Science. Ik wil me verder verdiepen in het analyseren van biologische datasets, het bouwen van reproduceerbare workflows en het toepassen van computationele methoden op biomedische vraagstukken. Mijn doel is om me te ontwikkelen tot een professional die biologie en data combineert in onderzoek of R&D‑omgevingen.
+Over 1 tot 2 jaar wil ik starten met een universitaire masteropleiding, specifiek de master Bioinformatics of de master Data Science. Ik wil me verder verdiepen in het analyseren van biologische datasets, het bouwen van reproduceerbare workflows en het toepassen van computationele methoden op biomedische vraagstukken. Mijn doel is om me te ontwikkelen tot een professional die biologie en data combineert in onderzoek.
 
 ## Vraag 2
 ### Hoe sta ik er nu voor? Welke skills heb ik al?
