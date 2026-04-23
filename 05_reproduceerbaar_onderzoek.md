@@ -1,5 +1,5 @@
 ---
-title: "Reproduceerbare analyse C. elegans dose-response"
+title: ""
 author: "Bo Steinschuld"
 output: html_document
 ---
