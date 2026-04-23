@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 11 opdracht 4a | Reproduceerbare analyse C. elegans dose-response</title>
+  <meta name="description" content="Hoofdstuk 11 opdracht 4a | Reproduceerbare analyse C. elegans dose-response" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 11 opdracht 4a | Reproduceerbare analyse C. elegans dose-response" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 11 opdracht 4a | Reproduceerbare analyse C. elegans dose-response" />
+  
+  
+  
+
+<meta name="author" content="Bo Steinschuld" />
+
+
+<meta name="date" content="2026-04-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="opdracht-3a-en-b.html"/>
+<link rel="next" href="opdracht-4b.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welkom</a></li>
+<li class="chapter" data-level="2" data-path="bo-steinschuld.html"><a href="bo-steinschuld.html"><i class="fa fa-check"></i><b>2</b> <span style="font-size: 48px; font-weight: 700;">Bo Steinschuld</span></a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="bo-steinschuld.html"><a href="bo-steinschuld.html#student-hogeschool-utrecht"><i class="fa fa-check"></i><b>2.0.1</b> <span style="color:#777;">Student Hogeschool Utrecht</span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="skills.html"><a href="skills.html"><i class="fa fa-check"></i><b>3</b> Skills</a></li>
+<li class="chapter" data-level="4" data-path="technical-stack.html"><a href="technical-stack.html"><i class="fa fa-check"></i><b>4</b> Technical Stack</a></li>
+<li class="chapter" data-level="5" data-path="experience.html"><a href="experience.html"><i class="fa fa-check"></i><b>5</b> Experience</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="experience.html"><a href="experience.html#student-life-sciences"><i class="fa fa-check"></i><b>5.1</b> Student Life Sciences</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="projects.html"><a href="projects.html"><i class="fa fa-check"></i><b>6</b> Projects</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="projects.html"><a href="projects.html#minor-food-and-pharma"><i class="fa fa-check"></i><b>6.0.1</b> Minor Food and Pharma</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="credits.html"><a href="credits.html"><i class="fa fa-check"></i><b>7</b> Credits</a></li>
+<li class="chapter" data-level="8" data-path="opdracht-1b.html"><a href="opdracht-1b.html"><i class="fa fa-check"></i><b>8</b> opdracht 1b</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="opdracht-1b.html"><a href="opdracht-1b.html#vraag-1"><i class="fa fa-check"></i><b>8.1</b> vraag 1</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="opdracht-1b.html"><a href="opdracht-1b.html#waar-wil-ik-over-12-jaar-zijn"><i class="fa fa-check"></i><b>8.1.1</b> Waar wil ik over 1–2 jaar zijn?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="opdracht-1b.html"><a href="opdracht-1b.html#vraag-2"><i class="fa fa-check"></i><b>8.2</b> Vraag 2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="opdracht-1b.html"><a href="opdracht-1b.html#hoe-sta-ik-er-nu-voor-welke-skills-heb-ik-al"><i class="fa fa-check"></i><b>8.2.1</b> Hoe sta ik er nu voor? Welke skills heb ik al?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="opdracht-1b.html"><a href="opdracht-1b.html#vraag-3"><i class="fa fa-check"></i><b>8.3</b> Vraag 3</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="opdracht-1b.html"><a href="opdracht-1b.html#welke-skills-moetwil-ik-nog-leren"><i class="fa fa-check"></i><b>8.3.1</b> Welke skills moet/wil ik nog leren?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html"><i class="fa fa-check"></i><b>9</b> Vrije opdracht</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#introductie"><i class="fa fa-check"></i><b>9.1</b> Introductie</a></li>
+<li class="chapter" data-level="9.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#doel-van-de-opdracht"><i class="fa fa-check"></i><b>9.2</b> Doel van de opdracht</a></li>
+<li class="chapter" data-level="9.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#planning-32-uur"><i class="fa fa-check"></i><b>9.3</b> Planning (32 uur)</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-1-ori%C3%ABntatie-en-literatuur-6-uur"><i class="fa fa-check"></i><b>9.3.1</b> Fase 1 — Oriëntatie en literatuur (6 uur)</a></li>
+<li class="chapter" data-level="9.3.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-2-opzetten-van-een-basis-registry-8-uur"><i class="fa fa-check"></i><b>9.3.2</b> Fase 2 — Opzetten van een basis registry (8 uur)</a></li>
+<li class="chapter" data-level="9.3.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-3-integratieconcept-met-mcp-langchain-8-uur"><i class="fa fa-check"></i><b>9.3.3</b> Fase 3 — Integratieconcept met MCP + LangChain (8 uur)</a></li>
+<li class="chapter" data-level="9.3.4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-4-workflowstructuur-met-langgraph-6-uur"><i class="fa fa-check"></i><b>9.3.4</b> Fase 4 — Workflow‑structuur met LangGraph (6 uur)</a></li>
+<li class="chapter" data-level="9.3.5" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-5-rapportage-en-afronding-4-uur"><i class="fa fa-check"></i><b>9.3.5</b> Fase 5 — Rapportage en afronding (4 uur)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#eindproduct"><i class="fa fa-check"></i><b>9.4</b> Eindproduct</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="opdracht-3a-en-b.html"><a href="opdracht-3a-en-b.html"><i class="fa fa-check"></i><b>10</b> opdracht 3a en b</a></li>
+<li class="chapter" data-level="11" data-path="opdracht-4a.html"><a href="opdracht-4a.html"><i class="fa fa-check"></i><b>11</b> opdracht 4a</a></li>
+<li class="chapter" data-level="12" data-path="opdracht-4b.html"><a href="opdracht-4b.html"><i class="fa fa-check"></i><b>12</b> opdracht 4b</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="opdracht-4b.html"><a href="opdracht-4b.html#referentie-naar-het-artikel"><i class="fa fa-check"></i><b>12.1</b> Referentie naar het artikel</a></li>
+<li class="chapter" data-level="12.2" data-path="opdracht-4b.html"><a href="opdracht-4b.html#onderzoeksvraag"><i class="fa fa-check"></i><b>12.2</b> Onderzoeksvraag</a></li>
+<li class="chapter" data-level="12.3" data-path="opdracht-4b.html"><a href="opdracht-4b.html#samenvatting-van-methode-en-resultaten"><i class="fa fa-check"></i><b>12.3</b> Samenvatting van methode en resultaten</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="opdracht-4b.html"><a href="opdracht-4b.html#methode"><i class="fa fa-check"></i><b>12.3.1</b> Methode</a></li>
+<li class="chapter" data-level="12.3.2" data-path="opdracht-4b.html"><a href="opdracht-4b.html#resultaten"><i class="fa fa-check"></i><b>12.3.2</b> Resultaten</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="opdracht-4b.html"><a href="opdracht-4b.html#beoordeling-van-reproduceerbaarheid-volgens-transparantiecriteria"><i class="fa fa-check"></i><b>12.4</b> Beoordeling van reproduceerbaarheid volgens transparantiecriteria</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="opdracht-4b.html"><a href="opdracht-4b.html#study-purpose"><i class="fa fa-check"></i><b>12.4.1</b> Study Purpose</a></li>
+<li class="chapter" data-level="12.4.2" data-path="opdracht-4b.html"><a href="opdracht-4b.html#data-availability-statement"><i class="fa fa-check"></i><b>12.4.2</b> Data Availability Statement</a></li>
+<li class="chapter" data-level="12.4.3" data-path="opdracht-4b.html"><a href="opdracht-4b.html#data-location"><i class="fa fa-check"></i><b>12.4.3</b> Data Location</a></li>
+<li class="chapter" data-level="12.4.4" data-path="opdracht-4b.html"><a href="opdracht-4b.html#study-location"><i class="fa fa-check"></i><b>12.4.4</b> Study Location</a></li>
+<li class="chapter" data-level="12.4.5" data-path="opdracht-4b.html"><a href="opdracht-4b.html#author-review"><i class="fa fa-check"></i><b>12.4.5</b> Author Review</a></li>
+<li class="chapter" data-level="12.4.6" data-path="opdracht-4b.html"><a href="opdracht-4b.html#ethics-statement"><i class="fa fa-check"></i><b>12.4.6</b> Ethics Statement</a></li>
+<li class="chapter" data-level="12.4.7" data-path="opdracht-4b.html"><a href="opdracht-4b.html#funding-statement"><i class="fa fa-check"></i><b>12.4.7</b> Funding Statement</a></li>
+<li class="chapter" data-level="12.4.8" data-path="opdracht-4b.html"><a href="opdracht-4b.html#code-availability"><i class="fa fa-check"></i><b>12.4.8</b> Code Availability</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="opdracht-4b.html"><a href="opdracht-4b.html#beoordeling-van-reproduceerbaarheid-van-de-r-code"><i class="fa fa-check"></i><b>12.5</b> Beoordeling van reproduceerbaarheid van de R code</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproduceerbare analyse C. elegans dose-response</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="opdracht-4a" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Hoofdstuk 11</span> opdracht 4a<a href="opdracht-4a.html#opdracht-4a" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In deze analyse wordt we data van C. elegans geanalyseerd die zijn blootgesteld aan verschillende concentraties van diverse chemicaliën.
+Doel: de analyse reproduceerbaar uitwerken met RMarkdown, inclusief visualisatie, normalisatie en een stappenplan richting dose–response analyse.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="opdracht-4a.html#cb1-1" tabindex="-1"></a><span class="co"># data inlezen</span></span>
+<span id="cb1-2"><a href="opdracht-4a.html#cb1-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;/home/bo.steinschuld/dsfb2_workflows_portfolio/data_raw/CE.LIQ.FLOW.062_Tidydata.xlsx&quot;</span>)</span>
+<span id="cb1-3"><a href="opdracht-4a.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="opdracht-4a.html#cb1-4" tabindex="-1"></a><span class="fu">glimpse</span>(data)</span></code></pre></div>
+<pre><code>## Rows: 360
+## Columns: 34
+## $ plateRow            &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ plateColumn         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ vialNr              &lt;dbl&gt; 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 1, 1,…
+## $ dropCode            &lt;chr&gt; &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, …
+## $ expType             &lt;chr&gt; &quot;experiment&quot;, &quot;experiment&quot;, &quot;experiment&quot;, &quot;experim…
+## $ expReplicate        &lt;dbl&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,…
+## $ expName             &lt;chr&gt; &quot;CE.LIQ.FLOW.062&quot;, &quot;CE.LIQ.FLOW.062&quot;, &quot;CE.LIQ.FLOW…
+## $ expDate             &lt;dttm&gt; 2020-11-30, 2020-11-30, 2020-11-30, 2020-11-30, 2…
+## $ expResearcher       &lt;chr&gt; &quot;Sergio Reijnders - Ellis Herder&quot;, &quot;Sergio Reijnde…
+## $ expTime             &lt;dbl&gt; 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68…
+## $ expUnit             &lt;chr&gt; &quot;hour&quot;, &quot;hour&quot;, &quot;hour&quot;, &quot;hour&quot;, &quot;hour&quot;, &quot;hour&quot;, &quot;h…
+## $ expVolumeCounted    &lt;dbl&gt; 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50…
+## $ RawData             &lt;dbl&gt; 44, 37, 45, 47, 41, 35, 41, 36, 40, 38, 44, 48, 43…
+## $ compCASRN           &lt;chr&gt; &quot;24157-81-1&quot;, &quot;24157-81-1&quot;, &quot;24157-81-1&quot;, &quot;24157-8…
+## $ compName            &lt;chr&gt; &quot;2,6-diisopropylnaphthalene&quot;, &quot;2,6-diisopropylnaph…
+## $ compConcentration   &lt;chr&gt; &quot;4.99&quot;, &quot;4.99&quot;, &quot;4.99&quot;, &quot;4.99&quot;, &quot;4.99&quot;, &quot;4.99&quot;, &quot;4…
+## $ compUnit            &lt;chr&gt; &quot;nM&quot;, &quot;nM&quot;, &quot;nM&quot;, &quot;nM&quot;, &quot;nM&quot;, &quot;nM&quot;, &quot;nM&quot;, &quot;nM&quot;, &quot;n…
+## $ compDelivery        &lt;chr&gt; &quot;Liquid&quot;, &quot;Liquid&quot;, &quot;Liquid&quot;, &quot;Liquid&quot;, &quot;Liquid&quot;, …
+## $ compVehicle         &lt;chr&gt; &quot;controlVehicleA&quot;, &quot;controlVehicleA&quot;, &quot;controlVehi…
+## $ elegansStrain       &lt;chr&gt; &quot;N2&quot;, &quot;N2&quot;, &quot;N2&quot;, &quot;N2&quot;, &quot;N2&quot;, &quot;N2&quot;, &quot;N2&quot;, &quot;N2&quot;, &quot;N…
+## $ elegansInput        &lt;dbl&gt; 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25…
+## $ bacterialStrain     &lt;chr&gt; &quot;OP50&quot;, &quot;OP50&quot;, &quot;OP50&quot;, &quot;OP50&quot;, &quot;OP50&quot;, &quot;OP50&quot;, &quot;O…
+## $ bacterialTreatment  &lt;chr&gt; &quot;heated&quot;, &quot;heated&quot;, &quot;heated&quot;, &quot;heated&quot;, &quot;heated&quot;, …
+## $ bacterialOD600      &lt;dbl&gt; 0.743, 0.743, 0.743, 0.743, 0.743, 0.743, 0.743, 0…
+## $ bacterialConcX      &lt;dbl&gt; 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,…
+## $ bacterialVolume     &lt;dbl&gt; 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, …
+## $ bacterialVolUnit    &lt;chr&gt; &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;u…
+## $ incubationVial      &lt;chr&gt; &quot;1,5 glass vial&quot;, &quot;1,5 glass vial&quot;, &quot;1,5 glass via…
+## $ incubationVolume    &lt;dbl&gt; 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 10…
+## $ incubationUnit      &lt;chr&gt; &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;ul&quot;, &quot;u…
+## $ incubationMethod    &lt;chr&gt; &quot;rockroll&quot;, &quot;rockroll&quot;, &quot;rockroll&quot;, &quot;rockroll&quot;, &quot;r…
+## $ incubationRPM       &lt;dbl&gt; 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35…
+## $ bubble              &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ incubateTemperature &lt;dbl&gt; 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20…</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="opdracht-4a.html#cb3-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="opdracht-4a.html#cb3-2" tabindex="-1"></a>  <span class="fu">select</span>(RawData, compName, compConcentration, expType) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="opdracht-4a.html#cb3-3" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>##     RawData        compName         compConcentration    expType         
+##  Min.   :  0.0   Length:360         Length:360         Length:360        
+##  1st Qu.: 51.5   Class :character   Class :character   Class :character  
+##  Median : 72.0   Mode  :character   Mode  :character   Mode  :character  
+##  Mean   : 68.1                                                           
+##  3rd Qu.: 88.0                                                           
+##  Max.   :124.0                                                           
+##  NA&#39;s   :5</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="opdracht-4a.html#cb5-1" tabindex="-1"></a><span class="fu">str</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(RawData, compName, compConcentration, expType))</span></code></pre></div>
+<pre><code>## tibble [360 × 4] (S3: tbl_df/tbl/data.frame)
+##  $ RawData          : num [1:360] 44 37 45 47 41 35 41 36 40 38 ...
+##  $ compName         : chr [1:360] &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; ...
+##  $ compConcentration: chr [1:360] &quot;4.99&quot; &quot;4.99&quot; &quot;4.99&quot; &quot;4.99&quot; ...
+##  $ expType          : chr [1:360] &quot;experiment&quot; &quot;experiment&quot; &quot;experiment&quot; &quot;experiment&quot; ...</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="opdracht-4a.html#cb7-1" tabindex="-1"></a><span class="co"># ik zie bij compName en compConcentration  characters staan terwijl dit factors en nummers moeten zijn.</span></span>
+<span id="cb7-2"><a href="opdracht-4a.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="opdracht-4a.html#cb7-3" tabindex="-1"></a><span class="co"># Daarom aanpassen:</span></span>
+<span id="cb7-4"><a href="opdracht-4a.html#cb7-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="opdracht-4a.html#cb7-5" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-6"><a href="opdracht-4a.html#cb7-6" tabindex="-1"></a>    <span class="at">RawData           =</span> <span class="fu">as.numeric</span>(RawData),</span>
+<span id="cb7-7"><a href="opdracht-4a.html#cb7-7" tabindex="-1"></a>    <span class="at">compName          =</span> <span class="fu">as.factor</span>(compName),</span>
+<span id="cb7-8"><a href="opdracht-4a.html#cb7-8" tabindex="-1"></a>    <span class="at">expType           =</span> <span class="fu">as.factor</span>(expType),</span>
+<span id="cb7-9"><a href="opdracht-4a.html#cb7-9" tabindex="-1"></a>    <span class="at">compConcentration =</span> <span class="fu">as.numeric</span>(compConcentration)</span>
+<span id="cb7-10"><a href="opdracht-4a.html#cb7-10" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## Warning: There was 1 warning in `mutate()`.
+## ℹ In argument: `compConcentration = as.numeric(compConcentration)`.
+## Caused by warning:
+## ! NAs introduced by coercion</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="opdracht-4a.html#cb9-1" tabindex="-1"></a><span class="fu">str</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(RawData, compName, compConcentration, expType))</span></code></pre></div>
+<pre><code>## tibble [360 × 4] (S3: tbl_df/tbl/data.frame)
+##  $ RawData          : num [1:360] 44 37 45 47 41 35 41 36 40 38 ...
+##  $ compName         : Factor w/ 5 levels &quot;2,6-diisopropylnaphthalene&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ compConcentration: num [1:360] 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 ...
+##  $ expType          : Factor w/ 4 levels &quot;controlNegative&quot;,..: 4 4 4 4 4 4 4 4 4 4 ...</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="opdracht-4a.html#cb11-1" tabindex="-1"></a><span class="co"># Scatterplot met:</span></span>
+<span id="cb11-2"><a href="opdracht-4a.html#cb11-2" tabindex="-1"></a><span class="co"># - compConcentration op x-as</span></span>
+<span id="cb11-3"><a href="opdracht-4a.html#cb11-3" tabindex="-1"></a><span class="co"># - RawData op y-as</span></span>
+<span id="cb11-4"><a href="opdracht-4a.html#cb11-4" tabindex="-1"></a><span class="co"># - kleur = compName</span></span>
+<span id="cb11-5"><a href="opdracht-4a.html#cb11-5" tabindex="-1"></a><span class="co"># - shape = expType</span></span>
+<span id="cb11-6"><a href="opdracht-4a.html#cb11-6" tabindex="-1"></a><span class="co"># - log10 x-as</span></span>
+<span id="cb11-7"><a href="opdracht-4a.html#cb11-7" tabindex="-1"></a><span class="co"># - jitter om overlap te voorkomen</span></span>
+<span id="cb11-8"><a href="opdracht-4a.html#cb11-8" tabindex="-1"></a><span class="co"># - leesbare labels</span></span>
+<span id="cb11-9"><a href="opdracht-4a.html#cb11-9" tabindex="-1"></a><span class="fu">ggplot</span>(data,</span>
+<span id="cb11-10"><a href="opdracht-4a.html#cb11-10" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> compConcentration,</span>
+<span id="cb11-11"><a href="opdracht-4a.html#cb11-11" tabindex="-1"></a>           <span class="at">y =</span> RawData,</span>
+<span id="cb11-12"><a href="opdracht-4a.html#cb11-12" tabindex="-1"></a>           <span class="at">colour =</span> compName,</span>
+<span id="cb11-13"><a href="opdracht-4a.html#cb11-13" tabindex="-1"></a>           <span class="at">shape =</span> expType)) <span class="sc">+</span></span>
+<span id="cb11-14"><a href="opdracht-4a.html#cb11-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.05</span>, <span class="at">height =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="opdracht-4a.html#cb11-15" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(</span>
+<span id="cb11-16"><a href="opdracht-4a.html#cb11-16" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(),</span>
+<span id="cb11-17"><a href="opdracht-4a.html#cb11-17" tabindex="-1"></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">log_breaks</span>()</span>
+<span id="cb11-18"><a href="opdracht-4a.html#cb11-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-19"><a href="opdracht-4a.html#cb11-19" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb11-20"><a href="opdracht-4a.html#cb11-20" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-21"><a href="opdracht-4a.html#cb11-21" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Concentratie (log10-schaal)&quot;</span>,</span>
+<span id="cb11-22"><a href="opdracht-4a.html#cb11-22" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Aantal nakomelingen&quot;</span>,</span>
+<span id="cb11-23"><a href="opdracht-4a.html#cb11-23" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;Compound&quot;</span>,</span>
+<span id="cb11-24"><a href="opdracht-4a.html#cb11-24" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;ExpType&quot;</span></span>
+<span id="cb11-25"><a href="opdracht-4a.html#cb11-25" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-26"><a href="opdracht-4a.html#cb11-26" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-27"><a href="opdracht-4a.html#cb11-27" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
+<span id="cb11-28"><a href="opdracht-4a.html#cb11-28" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## Warning in scale_x_log10(labels = scales::label_number(), breaks =
+## scales::log_breaks()): log-10 transformation introduced infinite values.</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<p><img src="05_reproduceerbaar_onderzoek_files/figure-html/scatterplot-1.png" width="672" /></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="opdracht-4a.html#cb14-1" tabindex="-1"></a><span class="co"># 1. Controleer datatypes</span></span>
+<span id="cb14-2"><a href="opdracht-4a.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="opdracht-4a.html#cb14-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="opdracht-4a.html#cb14-4" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-5"><a href="opdracht-4a.html#cb14-5" tabindex="-1"></a>    <span class="at">RawData =</span> <span class="fu">as.numeric</span>(RawData),</span>
+<span id="cb14-6"><a href="opdracht-4a.html#cb14-6" tabindex="-1"></a>    <span class="at">compConcentration =</span> <span class="fu">as.numeric</span>(compConcentration),</span>
+<span id="cb14-7"><a href="opdracht-4a.html#cb14-7" tabindex="-1"></a>    <span class="at">compName =</span> <span class="fu">as.factor</span>(compName),</span>
+<span id="cb14-8"><a href="opdracht-4a.html#cb14-8" tabindex="-1"></a>    <span class="at">expType =</span> <span class="fu">as.factor</span>(expType)</span>
+<span id="cb14-9"><a href="opdracht-4a.html#cb14-9" tabindex="-1"></a>  )</span>
+<span id="cb14-10"><a href="opdracht-4a.html#cb14-10" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="opdracht-4a.html#cb14-11" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="opdracht-4a.html#cb14-12" tabindex="-1"></a><span class="co"># 2. Bereken gemiddelde negatieve controle</span></span>
+<span id="cb14-13"><a href="opdracht-4a.html#cb14-13" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="opdracht-4a.html#cb14-14" tabindex="-1"></a>neg_mean <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb14-15"><a href="opdracht-4a.html#cb14-15" tabindex="-1"></a>  <span class="fu">filter</span>(expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-16"><a href="opdracht-4a.html#cb14-16" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_neg =</span> <span class="fu">mean</span>(RawData, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-17"><a href="opdracht-4a.html#cb14-17" tabindex="-1"></a>  <span class="fu">pull</span>(mean_neg)</span>
+<span id="cb14-18"><a href="opdracht-4a.html#cb14-18" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="opdracht-4a.html#cb14-19" tabindex="-1"></a>neg_mean   <span class="co"># handig om te printen</span></span></code></pre></div>
+<pre><code>## [1] 85.9</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="opdracht-4a.html#cb16-1" tabindex="-1"></a><span class="co"># 3. Normaliseer alle waarden</span></span>
+<span id="cb16-2"><a href="opdracht-4a.html#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="opdracht-4a.html#cb16-3" tabindex="-1"></a>data_norm <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="opdracht-4a.html#cb16-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">RawData_norm =</span> RawData <span class="sc">/</span> neg_mean)</span>
+<span id="cb16-5"><a href="opdracht-4a.html#cb16-5" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="opdracht-4a.html#cb16-6" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="opdracht-4a.html#cb16-7" tabindex="-1"></a><span class="co"># 4. Scatterplot met genormaliseerde waarden</span></span>
+<span id="cb16-8"><a href="opdracht-4a.html#cb16-8" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="opdracht-4a.html#cb16-9" tabindex="-1"></a><span class="fu">ggplot</span>(data_norm,</span>
+<span id="cb16-10"><a href="opdracht-4a.html#cb16-10" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> compConcentration,</span>
+<span id="cb16-11"><a href="opdracht-4a.html#cb16-11" tabindex="-1"></a>           <span class="at">y =</span> RawData_norm,</span>
+<span id="cb16-12"><a href="opdracht-4a.html#cb16-12" tabindex="-1"></a>           <span class="at">colour =</span> compName,</span>
+<span id="cb16-13"><a href="opdracht-4a.html#cb16-13" tabindex="-1"></a>           <span class="at">shape =</span> expType)) <span class="sc">+</span></span>
+<span id="cb16-14"><a href="opdracht-4a.html#cb16-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.05</span>, <span class="at">height =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb16-15"><a href="opdracht-4a.html#cb16-15" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(</span>
+<span id="cb16-16"><a href="opdracht-4a.html#cb16-16" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(),</span>
+<span id="cb16-17"><a href="opdracht-4a.html#cb16-17" tabindex="-1"></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">log_breaks</span>()</span>
+<span id="cb16-18"><a href="opdracht-4a.html#cb16-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-19"><a href="opdracht-4a.html#cb16-19" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb16-20"><a href="opdracht-4a.html#cb16-20" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-21"><a href="opdracht-4a.html#cb16-21" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Concentratie (log10-schaal)&quot;</span>,</span>
+<span id="cb16-22"><a href="opdracht-4a.html#cb16-22" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Genormaliseerde nakomelingen (t.o.v. negatieve controle = 1)&quot;</span>,</span>
+<span id="cb16-23"><a href="opdracht-4a.html#cb16-23" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;Compound&quot;</span>,</span>
+<span id="cb16-24"><a href="opdracht-4a.html#cb16-24" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;ExpType&quot;</span></span>
+<span id="cb16-25"><a href="opdracht-4a.html#cb16-25" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-26"><a href="opdracht-4a.html#cb16-26" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb16-27"><a href="opdracht-4a.html#cb16-27" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
+<span id="cb16-28"><a href="opdracht-4a.html#cb16-28" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## Warning in scale_x_log10(labels = scales::label_number(), breaks =
+## scales::log_breaks()): log-10 transformation introduced infinite values.</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<p><img src="05_reproduceerbaar_onderzoek_files/figure-html/nieuwe%20genornaliseerde%20scatterplot-1.png" width="672" /></p>
+<p>In dit experiment zijn C. elegans blootgesteld aan verschillende concentraties van diverse chemicaliën om te onderzoeken hoe deze stoffen de voortplanting beïnvloeden. Om de resultaten betrouwbaar te kunnen interpreteren, is het essentieel om te begrijpen welke controles in het experiment zijn opgenomen en waarom deze nodig zijn. De dataset bevat drie typen controles: een negatieve controle, een positieve controle en een vehicle controle.</p>
+<p>De negatieve controle bestaat uit wormen die niet zijn blootgesteld aan een werkzame stof. Dit is de conditie waarin we het normale, gezonde aantal nakomelingen verwachten. Deze controle vormt het referentiepunt van het experiment: alle andere metingen worden hiertegen afgezet. De negatieve controle laat zien hoe de wormen zich gedragen zonder enige vorm van toxiciteit of verstoring, en is daarom cruciaal om te bepalen of een compound daadwerkelijk een effect heeft.</p>
+<p>De positieve controle bevat een stof waarvan bekend is dat deze een sterk toxisch effect heeft op C. elegans. Het doel van deze controle is om te bevestigen dat de assay goed functioneert: als de positieve controle geen duidelijk effect laat zien, dan is er iets mis met het experiment (bijvoorbeeld met de wormen, de incubatiecondities of de meetmethode). De positieve controle fungeert dus als een kwaliteitscheck van het hele systeem.</p>
+<p>Daarnaast is er de vehicle controle, waarin de wormen worden blootgesteld aan het oplosmiddel (bijvoorbeeld DMSO) zonder werkzame stof. Veel chemicaliën moeten worden opgelost in een solvent voordat ze aan de wormen kunnen worden toegediend. Het is daarom belangrijk om te controleren of dit oplosmiddel zelf geen effect heeft op de voortplanting. Als de vehicle controle hetzelfde gedrag laat zien als de negatieve controle, weten we dat eventuele effecten in de experimentele condities niet worden veroorzaakt door het oplosmiddel.</p>
+<p>Om de resultaten tussen verschillende condities en concentraties goed te kunnen vergelijken, is de data vervolgens genormaliseerd ten opzichte van de negatieve controle. Hierbij wordt het gemiddelde aantal nakomelingen in de negatieve controle gelijkgesteld aan 1. Alle andere waarden worden uitgedrukt als een fractie van deze baseline. Deze normalisatie heeft meerdere voordelen: het corrigeert voor variatie tussen experimentdagen, maakt de resultaten intuïtiever te interpreteren en zorgt ervoor dat verschillen tussen compounds en concentraties duidelijker zichtbaar worden. Een waarde kleiner dan 1 duidt op een toxisch effect (minder nakomelingen dan normaal), terwijl een waarde groter dan 1 wijst op stimulatie of verhoogde voortplanting. Door deze aanpak ontstaat een helder en reproduceerbaar beeld van de effecten van de verschillende chemicaliën op de wormen.</p>
+<p><strong>stappenplan voor vervolgonderzoek</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="opdracht-4a.html#cb19-1" tabindex="-1"></a><span class="co"># let op: deze code wordt niet uitgevoerd, alleen laten zien!</span></span>
+<span id="cb19-2"><a href="opdracht-4a.html#cb19-2" tabindex="-1"></a><span class="co"># Deze code voert alle stappen uit die nodig zijn om een </span></span>
+<span id="cb19-3"><a href="opdracht-4a.html#cb19-3" tabindex="-1"></a><span class="co"># dose–response curve te fitten en de IC50 te bepalen.</span></span>
+<span id="cb19-4"><a href="opdracht-4a.html#cb19-4" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="opdracht-4a.html#cb19-5" tabindex="-1"></a><span class="co"># 1. Laad benodigde packages ---------------------------------</span></span>
+<span id="cb19-6"><a href="opdracht-4a.html#cb19-6" tabindex="-1"></a><span class="co"># drc = dose-response modelling</span></span>
+<span id="cb19-7"><a href="opdracht-4a.html#cb19-7" tabindex="-1"></a><span class="co"># tidyverse = data manipulatie en plotting</span></span>
+<span id="cb19-8"><a href="opdracht-4a.html#cb19-8" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;drc&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb19-9"><a href="opdracht-4a.html#cb19-9" tabindex="-1"></a><span class="fu">library</span>(drc)</span>
+<span id="cb19-10"><a href="opdracht-4a.html#cb19-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb19-11"><a href="opdracht-4a.html#cb19-11" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="opdracht-4a.html#cb19-12" tabindex="-1"></a><span class="co"># 2. Selecteer één compound voor de analyse -------------------</span></span>
+<span id="cb19-13"><a href="opdracht-4a.html#cb19-13" tabindex="-1"></a><span class="co"># Kies hier de naam van het compound dat je wilt analyseren.</span></span>
+<span id="cb19-14"><a href="opdracht-4a.html#cb19-14" tabindex="-1"></a>compound_of_interest <span class="ot">&lt;-</span> <span class="st">&quot;2,6-diisopropylnaphthalene&quot;</span></span>
+<span id="cb19-15"><a href="opdracht-4a.html#cb19-15" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="opdracht-4a.html#cb19-16" tabindex="-1"></a><span class="co"># Filter alleen:</span></span>
+<span id="cb19-17"><a href="opdracht-4a.html#cb19-17" tabindex="-1"></a><span class="co"># - dit compound</span></span>
+<span id="cb19-18"><a href="opdracht-4a.html#cb19-18" tabindex="-1"></a><span class="co"># - experimentele metingen (dus geen controles)</span></span>
+<span id="cb19-19"><a href="opdracht-4a.html#cb19-19" tabindex="-1"></a><span class="co"># - genormaliseerde respons (RawData_norm)</span></span>
+<span id="cb19-20"><a href="opdracht-4a.html#cb19-20" tabindex="-1"></a>dose_data <span class="ot">&lt;-</span> data_norm <span class="sc">%&gt;%</span></span>
+<span id="cb19-21"><a href="opdracht-4a.html#cb19-21" tabindex="-1"></a>  <span class="fu">filter</span>(compName <span class="sc">==</span> compound_of_interest,</span>
+<span id="cb19-22"><a href="opdracht-4a.html#cb19-22" tabindex="-1"></a>         expType <span class="sc">==</span> <span class="st">&quot;experiment&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-23"><a href="opdracht-4a.html#cb19-23" tabindex="-1"></a>  <span class="fu">select</span>(compConcentration, RawData_norm) <span class="sc">%&gt;%</span></span>
+<span id="cb19-24"><a href="opdracht-4a.html#cb19-24" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb19-25"><a href="opdracht-4a.html#cb19-25" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="opdracht-4a.html#cb19-26" tabindex="-1"></a><span class="co"># Controleer of de data er goed uitziet</span></span>
+<span id="cb19-27"><a href="opdracht-4a.html#cb19-27" tabindex="-1"></a><span class="fu">head</span>(dose_data)</span>
+<span id="cb19-28"><a href="opdracht-4a.html#cb19-28" tabindex="-1"></a></span>
+<span id="cb19-29"><a href="opdracht-4a.html#cb19-29" tabindex="-1"></a></span>
+<span id="cb19-30"><a href="opdracht-4a.html#cb19-30" tabindex="-1"></a><span class="co"># 3. Visualiseer ruwe dose–response relatie -------------------</span></span>
+<span id="cb19-31"><a href="opdracht-4a.html#cb19-31" tabindex="-1"></a><span class="co"># Dit is een snelle check om te zien of er een dalende trend is.</span></span>
+<span id="cb19-32"><a href="opdracht-4a.html#cb19-32" tabindex="-1"></a><span class="fu">ggplot</span>(dose_data,</span>
+<span id="cb19-33"><a href="opdracht-4a.html#cb19-33" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> compConcentration, <span class="at">y =</span> RawData_norm)) <span class="sc">+</span></span>
+<span id="cb19-34"><a href="opdracht-4a.html#cb19-34" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb19-35"><a href="opdracht-4a.html#cb19-35" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb19-36"><a href="opdracht-4a.html#cb19-36" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb19-37"><a href="opdracht-4a.html#cb19-37" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-38"><a href="opdracht-4a.html#cb19-38" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Ruwe dose–response voor&quot;</span>, compound_of_interest),</span>
+<span id="cb19-39"><a href="opdracht-4a.html#cb19-39" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Concentratie (log10-schaal)&quot;</span>,</span>
+<span id="cb19-40"><a href="opdracht-4a.html#cb19-40" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Genormaliseerde respons&quot;</span></span>
+<span id="cb19-41"><a href="opdracht-4a.html#cb19-41" tabindex="-1"></a>  )</span>
+<span id="cb19-42"><a href="opdracht-4a.html#cb19-42" tabindex="-1"></a></span>
+<span id="cb19-43"><a href="opdracht-4a.html#cb19-43" tabindex="-1"></a></span>
+<span id="cb19-44"><a href="opdracht-4a.html#cb19-44" tabindex="-1"></a><span class="co"># 4. Fit een 4-parameter log-logistisch model (LL.4) ----------</span></span>
+<span id="cb19-45"><a href="opdracht-4a.html#cb19-45" tabindex="-1"></a><span class="co"># LL.4 heeft vier parameters:</span></span>
+<span id="cb19-46"><a href="opdracht-4a.html#cb19-46" tabindex="-1"></a><span class="co"># - Lower: minimale respons</span></span>
+<span id="cb19-47"><a href="opdracht-4a.html#cb19-47" tabindex="-1"></a><span class="co"># - Upper: maximale respons</span></span>
+<span id="cb19-48"><a href="opdracht-4a.html#cb19-48" tabindex="-1"></a><span class="co"># - Slope: steilheid van de curve</span></span>
+<span id="cb19-49"><a href="opdracht-4a.html#cb19-49" tabindex="-1"></a><span class="co"># - IC50: concentratie waarbij 50% effect optreedt</span></span>
+<span id="cb19-50"><a href="opdracht-4a.html#cb19-50" tabindex="-1"></a>m_LL4 <span class="ot">&lt;-</span> <span class="fu">drm</span>(</span>
+<span id="cb19-51"><a href="opdracht-4a.html#cb19-51" tabindex="-1"></a>  RawData_norm <span class="sc">~</span> compConcentration,</span>
+<span id="cb19-52"><a href="opdracht-4a.html#cb19-52" tabindex="-1"></a>  <span class="at">data =</span> dose_data,</span>
+<span id="cb19-53"><a href="opdracht-4a.html#cb19-53" tabindex="-1"></a>  <span class="at">fct =</span> <span class="fu">LL.4</span>(<span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Slope&quot;</span>, <span class="st">&quot;Lower&quot;</span>, <span class="st">&quot;Upper&quot;</span>, <span class="st">&quot;IC50&quot;</span>))</span>
+<span id="cb19-54"><a href="opdracht-4a.html#cb19-54" tabindex="-1"></a>)</span>
+<span id="cb19-55"><a href="opdracht-4a.html#cb19-55" tabindex="-1"></a></span>
+<span id="cb19-56"><a href="opdracht-4a.html#cb19-56" tabindex="-1"></a><span class="co"># Bekijk modelresultaten</span></span>
+<span id="cb19-57"><a href="opdracht-4a.html#cb19-57" tabindex="-1"></a><span class="fu">summary</span>(m_LL4)</span>
+<span id="cb19-58"><a href="opdracht-4a.html#cb19-58" tabindex="-1"></a></span>
+<span id="cb19-59"><a href="opdracht-4a.html#cb19-59" tabindex="-1"></a></span>
+<span id="cb19-60"><a href="opdracht-4a.html#cb19-60" tabindex="-1"></a><span class="co"># 5. Plot de dose–response curve ------------------------------</span></span>
+<span id="cb19-61"><a href="opdracht-4a.html#cb19-61" tabindex="-1"></a><span class="co"># Dit geeft een nette S-curve met de ruwe punten erbij.</span></span>
+<span id="cb19-62"><a href="opdracht-4a.html#cb19-62" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb19-63"><a href="opdracht-4a.html#cb19-63" tabindex="-1"></a>  m_LL4,</span>
+<span id="cb19-64"><a href="opdracht-4a.html#cb19-64" tabindex="-1"></a>  <span class="at">log =</span> <span class="st">&quot;x&quot;</span>,</span>
+<span id="cb19-65"><a href="opdracht-4a.html#cb19-65" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Concentratie (log10-schaal)&quot;</span>,</span>
+<span id="cb19-66"><a href="opdracht-4a.html#cb19-66" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Genormaliseerde respons&quot;</span>,</span>
+<span id="cb19-67"><a href="opdracht-4a.html#cb19-67" tabindex="-1"></a>  <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;Dose–response curve voor&quot;</span>, compound_of_interest)</span>
+<span id="cb19-68"><a href="opdracht-4a.html#cb19-68" tabindex="-1"></a>)</span>
+<span id="cb19-69"><a href="opdracht-4a.html#cb19-69" tabindex="-1"></a></span>
+<span id="cb19-70"><a href="opdracht-4a.html#cb19-70" tabindex="-1"></a></span>
+<span id="cb19-71"><a href="opdracht-4a.html#cb19-71" tabindex="-1"></a><span class="co"># 6. Bepaal de IC50 -------------------------------------------</span></span>
+<span id="cb19-72"><a href="opdracht-4a.html#cb19-72" tabindex="-1"></a><span class="co"># ED() = Effective Dose</span></span>
+<span id="cb19-73"><a href="opdracht-4a.html#cb19-73" tabindex="-1"></a><span class="co"># ED(model, 50) = concentratie waarbij 50% effect optreedt</span></span>
+<span id="cb19-74"><a href="opdracht-4a.html#cb19-74" tabindex="-1"></a>IC50_result <span class="ot">&lt;-</span> <span class="fu">ED</span>(m_LL4, <span class="dv">50</span>, <span class="at">interval =</span> <span class="st">&quot;delta&quot;</span>)</span>
+<span id="cb19-75"><a href="opdracht-4a.html#cb19-75" tabindex="-1"></a>IC50_result</span>
+<span id="cb19-76"><a href="opdracht-4a.html#cb19-76" tabindex="-1"></a></span>
+<span id="cb19-77"><a href="opdracht-4a.html#cb19-77" tabindex="-1"></a><span class="co"># Output bevat:</span></span>
+<span id="cb19-78"><a href="opdracht-4a.html#cb19-78" tabindex="-1"></a><span class="co"># - Estimate = IC50</span></span>
+<span id="cb19-79"><a href="opdracht-4a.html#cb19-79" tabindex="-1"></a><span class="co"># - Lower / Upper = betrouwbaarheidsinterval</span></span>
+<span id="cb19-80"><a href="opdracht-4a.html#cb19-80" tabindex="-1"></a></span>
+<span id="cb19-81"><a href="opdracht-4a.html#cb19-81" tabindex="-1"></a></span>
+<span id="cb19-82"><a href="opdracht-4a.html#cb19-82" tabindex="-1"></a><span class="co"># 7. (Optioneel) Vergelijk modellen ---------------------------</span></span>
+<span id="cb19-83"><a href="opdracht-4a.html#cb19-83" tabindex="-1"></a><span class="co"># Soms is een 3-parameter model (LL.3) beter.</span></span>
+<span id="cb19-84"><a href="opdracht-4a.html#cb19-84" tabindex="-1"></a>m_LL3 <span class="ot">&lt;-</span> <span class="fu">drm</span>(</span>
+<span id="cb19-85"><a href="opdracht-4a.html#cb19-85" tabindex="-1"></a>  RawData_norm <span class="sc">~</span> compConcentration,</span>
+<span id="cb19-86"><a href="opdracht-4a.html#cb19-86" tabindex="-1"></a>  <span class="at">data =</span> dose_data,</span>
+<span id="cb19-87"><a href="opdracht-4a.html#cb19-87" tabindex="-1"></a>  <span class="at">fct =</span> <span class="fu">LL.3</span>()</span>
+<span id="cb19-88"><a href="opdracht-4a.html#cb19-88" tabindex="-1"></a>)</span>
+<span id="cb19-89"><a href="opdracht-4a.html#cb19-89" tabindex="-1"></a></span>
+<span id="cb19-90"><a href="opdracht-4a.html#cb19-90" tabindex="-1"></a><span class="co"># Vergelijk LL.3 en LL.4</span></span>
+<span id="cb19-91"><a href="opdracht-4a.html#cb19-91" tabindex="-1"></a><span class="fu">anova</span>(m_LL3, m_LL4)</span>
+<span id="cb19-92"><a href="opdracht-4a.html#cb19-92" tabindex="-1"></a></span>
+<span id="cb19-93"><a href="opdracht-4a.html#cb19-93" tabindex="-1"></a><span class="co"># Als LL.4 significant beter is → LL.4 gebruiken.</span></span></code></pre></div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="opdracht-3a-en-b.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="opdracht-4b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
