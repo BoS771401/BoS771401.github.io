@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 6 Reproduceerbaar onderzoek | Portfolio</title>
+  <meta name="description" content="Hoofdstuk 6 Reproduceerbaar onderzoek | Portfolio" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 6 Reproduceerbaar onderzoek | Portfolio" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 6 Reproduceerbaar onderzoek | Portfolio" />
+  
+  
+  
+
+<meta name="author" content="Bo Steinschuld" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="guerilla-analytics.html"/>
+<link rel="next" href="introductie-projecticum.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welkom</a></li>
+<li class="chapter" data-level="2" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>2</b> CV</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="cv.html"><a href="cv.html#skills"><i class="fa fa-check"></i><b>2.1</b> Skills</a></li>
+<li class="chapter" data-level="2.2" data-path="cv.html"><a href="cv.html#technical-stack"><i class="fa fa-check"></i><b>2.2</b> Technical Stack</a></li>
+<li class="chapter" data-level="2.3" data-path="cv.html"><a href="cv.html#experience"><i class="fa fa-check"></i><b>2.3</b> Experience</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="cv.html"><a href="cv.html#student-life-sciences"><i class="fa fa-check"></i><b>2.3.1</b> Student Life Sciences</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cv.html"><a href="cv.html#projects"><i class="fa fa-check"></i><b>2.4</b> Projects</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="cv.html"><a href="cv.html#minor-food-and-pharma"><i class="fa fa-check"></i><b>2.4.1</b> Minor Food and Pharma</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cv.html"><a href="cv.html#credits"><i class="fa fa-check"></i><b>2.5</b> Credits</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html"><i class="fa fa-check"></i><b>3</b> Toekomstgerichte vragen</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#vraag-1"><i class="fa fa-check"></i><b>3.1</b> vraag 1</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#waar-wil-ik-over-12-jaar-zijn"><i class="fa fa-check"></i><b>3.1.1</b> Waar wil ik over 1–2 jaar zijn?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#vraag-2"><i class="fa fa-check"></i><b>3.2</b> Vraag 2</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#hoe-sta-ik-er-nu-voor-welke-skills-heb-ik-al"><i class="fa fa-check"></i><b>3.2.1</b> Hoe sta ik er nu voor? Welke skills heb ik al?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#vraag-3"><i class="fa fa-check"></i><b>3.3</b> Vraag 3</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#welke-skills-moetwil-ik-nog-leren"><i class="fa fa-check"></i><b>3.3.1</b> Welke skills moet/wil ik nog leren?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html"><i class="fa fa-check"></i><b>4</b> Vrije opdracht</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#introductie"><i class="fa fa-check"></i><b>4.1</b> Introductie</a></li>
+<li class="chapter" data-level="4.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#doel-van-de-opdracht"><i class="fa fa-check"></i><b>4.2</b> Doel van de opdracht</a></li>
+<li class="chapter" data-level="4.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#planning-32-uur"><i class="fa fa-check"></i><b>4.3</b> Planning (32 uur)</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-1-ori%C3%ABntatie-en-literatuur-6-uur-4-mei-2026"><i class="fa fa-check"></i><b>4.3.1</b> Fase 1: Oriëntatie en literatuur (6 uur; 4 mei 2026)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-2-opzetten-van-een-basis-registry-8-uur-13-mei-2026"><i class="fa fa-check"></i><b>4.3.2</b> Fase 2: Opzetten van een basis registry (8 uur; 13 mei 2026)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-3-integratieconcept-met-mcp-langchain-8-uur-16-mei-2026"><i class="fa fa-check"></i><b>4.3.3</b> Fase 3: Integratieconcept met MCP + LangChain (8 uur; 16 mei 2026)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-4-rapportage-en-afronding-4-uur-17-mei-2026"><i class="fa fa-check"></i><b>4.3.4</b> Fase 4: Rapportage en afronding (4 uur; 17 mei 2026)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#smart-leerdoelen"><i class="fa fa-check"></i><b>4.4</b> SMART-leerdoelen</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#smart-doel-1-rnaseq-registry-bouwen"><i class="fa fa-check"></i><b>4.4.1</b> SMART-doel 1: RNA‑seq registry bouwen</a></li>
+<li class="chapter" data-level="4.4.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#smartdoel-2-mcpachtige-tools-en-agentsimulatie"><i class="fa fa-check"></i><b>4.4.2</b> SMART‑doel 2: MCP‑achtige tools en agent‑simulatie</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-fase-1"><i class="fa fa-check"></i><b>4.5</b> Uitwerking Fase 1</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#wat-is-mcp"><i class="fa fa-check"></i><b>4.5.1</b> Wat is MCP?</a></li>
+<li class="chapter" data-level="4.5.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#wat-is-langchain"><i class="fa fa-check"></i><b>4.5.2</b> Wat is LangChain?</a></li>
+<li class="chapter" data-level="4.5.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#rna-sequencing-tools-inventariseren"><i class="fa fa-check"></i><b>4.5.3</b> RNA-sequencing tools inventariseren</a></li>
+<li class="chapter" data-level="4.5.4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#metadata-voor-de-registry"><i class="fa fa-check"></i><b>4.5.4</b> Metadata voor de registry</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-fase-2"><i class="fa fa-check"></i><b>4.6</b> Uitwerking Fase 2</a></li>
+<li class="chapter" data-level="4.7" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-fase-3"><i class="fa fa-check"></i><b>4.7</b> Uitwerking fase 3</a></li>
+<li class="chapter" data-level="4.8" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#reflectieverslag"><i class="fa fa-check"></i><b>4.8</b> Reflectieverslag</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#terugblik-op-het-proces-en-mijn-leerervaring"><i class="fa fa-check"></i><b>4.8.1</b> Terugblik op het proces en mijn leerervaring</a></li>
+<li class="chapter" data-level="4.8.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-van-mijn-smartleerdoelen"><i class="fa fa-check"></i><b>4.8.2</b> Uitwerking van mijn SMART‑leerdoelen</a></li>
+<li class="chapter" data-level="4.8.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#vervolgstappen-en-toekomst"><i class="fa fa-check"></i><b>4.8.3</b> Vervolgstappen en toekomst</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="guerilla-analytics.html"><a href="guerilla-analytics.html"><i class="fa fa-check"></i><b>5</b> Guerilla Analytics</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="guerilla-analytics.html"><a href="guerilla-analytics.html#opdracht-3a"><i class="fa fa-check"></i><b>5.1</b> opdracht 3a</a></li>
+<li class="chapter" data-level="5.2" data-path="guerilla-analytics.html"><a href="guerilla-analytics.html#opdracht-3b"><i class="fa fa-check"></i><b>5.2</b> opdracht 3b</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html"><i class="fa fa-check"></i><b>6</b> Reproduceerbaar onderzoek</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#opdracht-4a"><i class="fa fa-check"></i><b>6.1</b> Opdracht 4a</a></li>
+<li class="chapter" data-level="6.2" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#opdracht-4b"><i class="fa fa-check"></i><b>6.2</b> opdracht 4b</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#referentie-naar-het-artikel"><i class="fa fa-check"></i><b>6.2.1</b> Referentie naar het artikel</a></li>
+<li class="chapter" data-level="6.2.2" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#onderzoeksvraag"><i class="fa fa-check"></i><b>6.2.2</b> Onderzoeksvraag</a></li>
+<li class="chapter" data-level="6.2.3" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#samenvatting-van-methode-en-resultaten"><i class="fa fa-check"></i><b>6.2.3</b> Samenvatting van methode en resultaten</a></li>
+<li class="chapter" data-level="6.2.4" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#beoordeling-van-reproduceerbaarheid-volgens-transparantiecriteria"><i class="fa fa-check"></i><b>6.2.4</b> Beoordeling van reproduceerbaarheid volgens transparantiecriteria</a></li>
+<li class="chapter" data-level="6.2.5" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#beoordeling-van-reproduceerbaarheid-van-de-r-code"><i class="fa fa-check"></i><b>6.2.5</b> Beoordeling van reproduceerbaarheid van de R code</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="introductie-projecticum.html"><a href="introductie-projecticum.html"><i class="fa fa-check"></i><b>7</b> Introductie projecticum</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="introductie-projecticum.html"><a href="introductie-projecticum.html#referenties"><i class="fa fa-check"></i><b>7.1</b> Referenties</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="covid-19-report.html"><a href="covid-19-report.html"><i class="fa fa-check"></i><b>8</b> COVID-19 Report</a></li>
+<li class="chapter" data-level="9" data-path="bronnenlijst.html"><a href="bronnenlijst.html"><i class="fa fa-check"></i><b>9</b> Bronnenlijst</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="bronnenlijst.html"><a href="bronnenlijst.html#bronnen-die-gebruikt-zijn-voor-de-vrije-opdracht-codering"><i class="fa fa-check"></i><b>9.1</b> bronnen die gebruikt zijn voor de vrije opdracht codering:</a></li>
+<li class="chapter" data-level="9.2" data-path="bronnenlijst.html"><a href="bronnenlijst.html#bronnen-voor-theoretisch-kader-vrije-opdracht"><i class="fa fa-check"></i><b>9.2</b> bronnen voor theoretisch kader vrije opdracht:</a></li>
+<li class="chapter" data-level="9.3" data-path="bronnenlijst.html"><a href="bronnenlijst.html#bronnen-introductie-projecticum"><i class="fa fa-check"></i><b>9.3</b> bronnen introductie projecticum:</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Portfolio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="reproduceerbaar-onderzoek" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Hoofdstuk 6</span> Reproduceerbaar onderzoek<a href="reproduceerbaar-onderzoek.html#reproduceerbaar-onderzoek" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="opdracht-4a" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Opdracht 4a<a href="reproduceerbaar-onderzoek.html#opdracht-4a" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In deze analyse wordt we data van C. elegans geanalyseerd die zijn blootgesteld aan verschillende concentraties van diverse chemicaliën.
+Doel: de analyse reproduceerbaar uitwerken met RMarkdown, inclusief visualisatie, normalisatie en een stappenplan richting dose–response analyse.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="reproduceerbaar-onderzoek.html#cb12-1" tabindex="-1"></a><span class="co"># data inlezen</span></span>
+<span id="cb12-2"><a href="reproduceerbaar-onderzoek.html#cb12-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data_raw/CE.LIQ.FLOW.062_Tidydata.xlsx&quot;</span>)</span>
+<span id="cb12-3"><a href="reproduceerbaar-onderzoek.html#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="reproduceerbaar-onderzoek.html#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="reproduceerbaar-onderzoek.html#cb12-5" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="reproduceerbaar-onderzoek.html#cb12-6" tabindex="-1"></a>  <span class="fu">select</span>(RawData, compName, compConcentration, expType) <span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a href="reproduceerbaar-onderzoek.html#cb12-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>##     RawData        compName         compConcentration    expType         
+##  Min.   :  0.0   Length:360         Length:360         Length:360        
+##  1st Qu.: 51.5   Class :character   Class :character   Class :character  
+##  Median : 72.0   Mode  :character   Mode  :character   Mode  :character  
+##  Mean   : 68.1                                                           
+##  3rd Qu.: 88.0                                                           
+##  Max.   :124.0                                                           
+##  NA&#39;s   :5</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="reproduceerbaar-onderzoek.html#cb14-1" tabindex="-1"></a><span class="fu">str</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(RawData, compName, compConcentration, expType))</span></code></pre></div>
+<pre><code>## tibble [360 × 4] (S3: tbl_df/tbl/data.frame)
+##  $ RawData          : num [1:360] 44 37 45 47 41 35 41 36 40 38 ...
+##  $ compName         : chr [1:360] &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; ...
+##  $ compConcentration: chr [1:360] &quot;4.99&quot; &quot;4.99&quot; &quot;4.99&quot; &quot;4.99&quot; ...
+##  $ expType          : chr [1:360] &quot;experiment&quot; &quot;experiment&quot; &quot;experiment&quot; &quot;experiment&quot; ...</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="reproduceerbaar-onderzoek.html#cb16-1" tabindex="-1"></a><span class="co"># ik zie bij compName en compConcentration  characters staan terwijl dit factors en nummers moeten zijn.</span></span>
+<span id="cb16-2"><a href="reproduceerbaar-onderzoek.html#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="reproduceerbaar-onderzoek.html#cb16-3" tabindex="-1"></a><span class="co"># Daarom aanpassen:</span></span>
+<span id="cb16-4"><a href="reproduceerbaar-onderzoek.html#cb16-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="reproduceerbaar-onderzoek.html#cb16-5" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-6"><a href="reproduceerbaar-onderzoek.html#cb16-6" tabindex="-1"></a>    <span class="at">RawData           =</span> <span class="fu">as.numeric</span>(RawData),</span>
+<span id="cb16-7"><a href="reproduceerbaar-onderzoek.html#cb16-7" tabindex="-1"></a>    <span class="at">compName          =</span> <span class="fu">as.factor</span>(compName),</span>
+<span id="cb16-8"><a href="reproduceerbaar-onderzoek.html#cb16-8" tabindex="-1"></a>    <span class="at">expType           =</span> <span class="fu">as.factor</span>(expType),</span>
+<span id="cb16-9"><a href="reproduceerbaar-onderzoek.html#cb16-9" tabindex="-1"></a>    <span class="at">compConcentration =</span> <span class="fu">as.numeric</span>(compConcentration)</span>
+<span id="cb16-10"><a href="reproduceerbaar-onderzoek.html#cb16-10" tabindex="-1"></a>  )</span>
+<span id="cb16-11"><a href="reproduceerbaar-onderzoek.html#cb16-11" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="reproduceerbaar-onderzoek.html#cb16-12" tabindex="-1"></a><span class="fu">str</span>(data <span class="sc">%&gt;%</span> <span class="fu">select</span>(RawData, compName, compConcentration, expType))</span></code></pre></div>
+<pre><code>## tibble [360 × 4] (S3: tbl_df/tbl/data.frame)
+##  $ RawData          : num [1:360] 44 37 45 47 41 35 41 36 40 38 ...
+##  $ compName         : Factor w/ 5 levels &quot;2,6-diisopropylnaphthalene&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ compConcentration: num [1:360] 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 ...
+##  $ expType          : Factor w/ 4 levels &quot;controlNegative&quot;,..: 4 4 4 4 4 4 4 4 4 4 ...</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="reproduceerbaar-onderzoek.html#cb18-1" tabindex="-1"></a><span class="co"># Scatterplot met:</span></span>
+<span id="cb18-2"><a href="reproduceerbaar-onderzoek.html#cb18-2" tabindex="-1"></a><span class="co"># - compConcentration op x-as</span></span>
+<span id="cb18-3"><a href="reproduceerbaar-onderzoek.html#cb18-3" tabindex="-1"></a><span class="co"># - RawData op y-as</span></span>
+<span id="cb18-4"><a href="reproduceerbaar-onderzoek.html#cb18-4" tabindex="-1"></a><span class="co"># - kleur = compName</span></span>
+<span id="cb18-5"><a href="reproduceerbaar-onderzoek.html#cb18-5" tabindex="-1"></a><span class="co"># - shape = expType</span></span>
+<span id="cb18-6"><a href="reproduceerbaar-onderzoek.html#cb18-6" tabindex="-1"></a><span class="co"># - log10 x-as</span></span>
+<span id="cb18-7"><a href="reproduceerbaar-onderzoek.html#cb18-7" tabindex="-1"></a><span class="co"># - jitter om overlap te voorkomen</span></span>
+<span id="cb18-8"><a href="reproduceerbaar-onderzoek.html#cb18-8" tabindex="-1"></a><span class="co"># - leesbare labels</span></span>
+<span id="cb18-9"><a href="reproduceerbaar-onderzoek.html#cb18-9" tabindex="-1"></a><span class="fu">ggplot</span>(data,</span>
+<span id="cb18-10"><a href="reproduceerbaar-onderzoek.html#cb18-10" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> compConcentration,</span>
+<span id="cb18-11"><a href="reproduceerbaar-onderzoek.html#cb18-11" tabindex="-1"></a>           <span class="at">y =</span> RawData,</span>
+<span id="cb18-12"><a href="reproduceerbaar-onderzoek.html#cb18-12" tabindex="-1"></a>           <span class="at">colour =</span> compName,</span>
+<span id="cb18-13"><a href="reproduceerbaar-onderzoek.html#cb18-13" tabindex="-1"></a>           <span class="at">shape =</span> expType)) <span class="sc">+</span></span>
+<span id="cb18-14"><a href="reproduceerbaar-onderzoek.html#cb18-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.05</span>, <span class="at">height =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="reproduceerbaar-onderzoek.html#cb18-15" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(</span>
+<span id="cb18-16"><a href="reproduceerbaar-onderzoek.html#cb18-16" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(),</span>
+<span id="cb18-17"><a href="reproduceerbaar-onderzoek.html#cb18-17" tabindex="-1"></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">log_breaks</span>()</span>
+<span id="cb18-18"><a href="reproduceerbaar-onderzoek.html#cb18-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-19"><a href="reproduceerbaar-onderzoek.html#cb18-19" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb18-20"><a href="reproduceerbaar-onderzoek.html#cb18-20" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-21"><a href="reproduceerbaar-onderzoek.html#cb18-21" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Concentratie (log10-schaal)&quot;</span>,</span>
+<span id="cb18-22"><a href="reproduceerbaar-onderzoek.html#cb18-22" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Aantal nakomelingen&quot;</span>,</span>
+<span id="cb18-23"><a href="reproduceerbaar-onderzoek.html#cb18-23" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;Compound&quot;</span>,</span>
+<span id="cb18-24"><a href="reproduceerbaar-onderzoek.html#cb18-24" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;ExpType&quot;</span></span>
+<span id="cb18-25"><a href="reproduceerbaar-onderzoek.html#cb18-25" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-26"><a href="reproduceerbaar-onderzoek.html#cb18-26" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb18-27"><a href="reproduceerbaar-onderzoek.html#cb18-27" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
+<span id="cb18-28"><a href="reproduceerbaar-onderzoek.html#cb18-28" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="05_reproduceerbaar_onderzoek_files/figure-html/scatterplot-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="reproduceerbaar-onderzoek.html#cb19-1" tabindex="-1"></a><span class="co"># Controleer datatypes</span></span>
+<span id="cb19-2"><a href="reproduceerbaar-onderzoek.html#cb19-2" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="reproduceerbaar-onderzoek.html#cb19-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="reproduceerbaar-onderzoek.html#cb19-4" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-5"><a href="reproduceerbaar-onderzoek.html#cb19-5" tabindex="-1"></a>    <span class="at">RawData =</span> <span class="fu">as.numeric</span>(RawData),</span>
+<span id="cb19-6"><a href="reproduceerbaar-onderzoek.html#cb19-6" tabindex="-1"></a>    <span class="at">compConcentration =</span> <span class="fu">as.numeric</span>(compConcentration),</span>
+<span id="cb19-7"><a href="reproduceerbaar-onderzoek.html#cb19-7" tabindex="-1"></a>    <span class="at">compName =</span> <span class="fu">as.factor</span>(compName),</span>
+<span id="cb19-8"><a href="reproduceerbaar-onderzoek.html#cb19-8" tabindex="-1"></a>    <span class="at">expType =</span> <span class="fu">as.factor</span>(expType)</span>
+<span id="cb19-9"><a href="reproduceerbaar-onderzoek.html#cb19-9" tabindex="-1"></a>  )</span>
+<span id="cb19-10"><a href="reproduceerbaar-onderzoek.html#cb19-10" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="reproduceerbaar-onderzoek.html#cb19-11" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="reproduceerbaar-onderzoek.html#cb19-12" tabindex="-1"></a><span class="co"># Bereken gemiddelde negatieve controle</span></span>
+<span id="cb19-13"><a href="reproduceerbaar-onderzoek.html#cb19-13" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="reproduceerbaar-onderzoek.html#cb19-14" tabindex="-1"></a>neg_mean <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb19-15"><a href="reproduceerbaar-onderzoek.html#cb19-15" tabindex="-1"></a>  <span class="fu">filter</span>(expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-16"><a href="reproduceerbaar-onderzoek.html#cb19-16" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_neg =</span> <span class="fu">mean</span>(RawData, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-17"><a href="reproduceerbaar-onderzoek.html#cb19-17" tabindex="-1"></a>  <span class="fu">pull</span>(mean_neg)</span>
+<span id="cb19-18"><a href="reproduceerbaar-onderzoek.html#cb19-18" tabindex="-1"></a></span>
+<span id="cb19-19"><a href="reproduceerbaar-onderzoek.html#cb19-19" tabindex="-1"></a>neg_mean   <span class="co"># handig om te printen</span></span></code></pre></div>
+<pre><code>## [1] 85.9</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="reproduceerbaar-onderzoek.html#cb21-1" tabindex="-1"></a><span class="co"># Normaliseer alle waarden</span></span>
+<span id="cb21-2"><a href="reproduceerbaar-onderzoek.html#cb21-2" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="reproduceerbaar-onderzoek.html#cb21-3" tabindex="-1"></a>data_norm <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="reproduceerbaar-onderzoek.html#cb21-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">RawData_norm =</span> RawData <span class="sc">/</span> neg_mean)</span>
+<span id="cb21-5"><a href="reproduceerbaar-onderzoek.html#cb21-5" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="reproduceerbaar-onderzoek.html#cb21-6" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="reproduceerbaar-onderzoek.html#cb21-7" tabindex="-1"></a><span class="co"># Scatterplot met genormaliseerde waarden</span></span>
+<span id="cb21-8"><a href="reproduceerbaar-onderzoek.html#cb21-8" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="reproduceerbaar-onderzoek.html#cb21-9" tabindex="-1"></a><span class="fu">ggplot</span>(data_norm,</span>
+<span id="cb21-10"><a href="reproduceerbaar-onderzoek.html#cb21-10" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> compConcentration,</span>
+<span id="cb21-11"><a href="reproduceerbaar-onderzoek.html#cb21-11" tabindex="-1"></a>           <span class="at">y =</span> RawData_norm,</span>
+<span id="cb21-12"><a href="reproduceerbaar-onderzoek.html#cb21-12" tabindex="-1"></a>           <span class="at">colour =</span> compName,</span>
+<span id="cb21-13"><a href="reproduceerbaar-onderzoek.html#cb21-13" tabindex="-1"></a>           <span class="at">shape =</span> expType)) <span class="sc">+</span></span>
+<span id="cb21-14"><a href="reproduceerbaar-onderzoek.html#cb21-14" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.05</span>, <span class="at">height =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb21-15"><a href="reproduceerbaar-onderzoek.html#cb21-15" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(</span>
+<span id="cb21-16"><a href="reproduceerbaar-onderzoek.html#cb21-16" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(),</span>
+<span id="cb21-17"><a href="reproduceerbaar-onderzoek.html#cb21-17" tabindex="-1"></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">log_breaks</span>()</span>
+<span id="cb21-18"><a href="reproduceerbaar-onderzoek.html#cb21-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb21-19"><a href="reproduceerbaar-onderzoek.html#cb21-19" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb21-20"><a href="reproduceerbaar-onderzoek.html#cb21-20" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb21-21"><a href="reproduceerbaar-onderzoek.html#cb21-21" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Concentratie (log10-schaal)&quot;</span>,</span>
+<span id="cb21-22"><a href="reproduceerbaar-onderzoek.html#cb21-22" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Genormaliseerde nakomelingen (t.o.v. negatieve controle = 1)&quot;</span>,</span>
+<span id="cb21-23"><a href="reproduceerbaar-onderzoek.html#cb21-23" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;Compound&quot;</span>,</span>
+<span id="cb21-24"><a href="reproduceerbaar-onderzoek.html#cb21-24" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;ExpType&quot;</span></span>
+<span id="cb21-25"><a href="reproduceerbaar-onderzoek.html#cb21-25" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb21-26"><a href="reproduceerbaar-onderzoek.html#cb21-26" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb21-27"><a href="reproduceerbaar-onderzoek.html#cb21-27" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
+<span id="cb21-28"><a href="reproduceerbaar-onderzoek.html#cb21-28" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="05_reproduceerbaar_onderzoek_files/figure-html/nieuwe%20genornaliseerde%20scatterplot-1.png" alt="" width="672" /></p>
+<p>In dit experiment zijn C. elegans blootgesteld aan verschillende concentraties van diverse chemicaliën om te onderzoeken hoe deze stoffen de voortplanting beïnvloeden. Om de resultaten betrouwbaar te kunnen interpreteren, is het essentieel om te begrijpen welke controles in het experiment zijn opgenomen en waarom deze nodig zijn. De dataset bevat drie typen controles: een negatieve controle, een positieve controle en een vehicle controle.</p>
+<p>De negatieve controle bestaat uit wormen die niet zijn blootgesteld aan een werkzame stof. Dit is de conditie waarin we het normale, gezonde aantal nakomelingen verwachten. Deze controle vormt het referentiepunt van het experiment: alle andere metingen worden hiertegen afgezet. De negatieve controle laat zien hoe de wormen zich gedragen zonder enige vorm van toxiciteit of verstoring, en is daarom cruciaal om te bepalen of een compound daadwerkelijk een effect heeft.</p>
+<p>De positieve controle bevat een stof waarvan bekend is dat deze een sterk toxisch effect heeft op C. elegans. Het doel van deze controle is om te bevestigen dat de assay goed functioneert: als de positieve controle geen duidelijk effect laat zien, dan is er iets mis met het experiment (bijvoorbeeld met de wormen, de incubatiecondities of de meetmethode). De positieve controle fungeert dus als een kwaliteitscheck van het hele systeem.</p>
+<p>Daarnaast is er de vehicle controle, waarin de wormen worden blootgesteld aan het oplosmiddel (bijvoorbeeld DMSO) zonder werkzame stof. Veel chemicaliën moeten worden opgelost in een solvent voordat ze aan de wormen kunnen worden toegediend. Het is daarom belangrijk om te controleren of dit oplosmiddel zelf geen effect heeft op de voortplanting. Als de vehicle controle hetzelfde gedrag laat zien als de negatieve controle, weten we dat eventuele effecten in de experimentele condities niet worden veroorzaakt door het oplosmiddel.</p>
+<p>Om de resultaten tussen verschillende condities en concentraties goed te kunnen vergelijken, is de data vervolgens genormaliseerd ten opzichte van de negatieve controle. Hierbij wordt het gemiddelde aantal nakomelingen in de negatieve controle gelijkgesteld aan 1. Alle andere waarden worden uitgedrukt als een fractie van deze baseline. Deze normalisatie heeft meerdere voordelen: het corrigeert voor variatie tussen experimentdagen, maakt de resultaten intuïtiever te interpreteren en zorgt ervoor dat verschillen tussen compounds en concentraties duidelijker zichtbaar worden. Een waarde kleiner dan 1 duidt op een toxisch effect (minder nakomelingen dan normaal), terwijl een waarde groter dan 1 wijst op stimulatie of verhoogde voortplanting. Door deze aanpak ontstaat een helder en reproduceerbaar beeld van de effecten van de verschillende chemicaliën op de wormen.</p>
+<p><strong>stappenplan voor vervolgonderzoek</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="reproduceerbaar-onderzoek.html#cb22-1" tabindex="-1"></a><span class="co"># let op: deze code voer ik niet uit, dit is alleen het stappenplan!</span></span>
+<span id="cb22-2"><a href="reproduceerbaar-onderzoek.html#cb22-2" tabindex="-1"></a><span class="co"># Deze code voert alle stappen uit die nodig zijn om een </span></span>
+<span id="cb22-3"><a href="reproduceerbaar-onderzoek.html#cb22-3" tabindex="-1"></a><span class="co"># dose–response curve te fitten en de IC50 te bepalen.</span></span>
+<span id="cb22-4"><a href="reproduceerbaar-onderzoek.html#cb22-4" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="reproduceerbaar-onderzoek.html#cb22-5" tabindex="-1"></a><span class="co"># Laad benodigde packages </span></span>
+<span id="cb22-6"><a href="reproduceerbaar-onderzoek.html#cb22-6" tabindex="-1"></a><span class="co"># drc = dose-response modelling</span></span>
+<span id="cb22-7"><a href="reproduceerbaar-onderzoek.html#cb22-7" tabindex="-1"></a><span class="co"># tidyverse = data manipulatie en plotting</span></span>
+<span id="cb22-8"><a href="reproduceerbaar-onderzoek.html#cb22-8" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;drc&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb22-9"><a href="reproduceerbaar-onderzoek.html#cb22-9" tabindex="-1"></a><span class="fu">library</span>(drc)</span>
+<span id="cb22-10"><a href="reproduceerbaar-onderzoek.html#cb22-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb22-11"><a href="reproduceerbaar-onderzoek.html#cb22-11" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="reproduceerbaar-onderzoek.html#cb22-12" tabindex="-1"></a><span class="co"># Selecteer één compound voor de analyse </span></span>
+<span id="cb22-13"><a href="reproduceerbaar-onderzoek.html#cb22-13" tabindex="-1"></a><span class="co"># Kies hier de naam van het compound dat je wilt analyseren.</span></span>
+<span id="cb22-14"><a href="reproduceerbaar-onderzoek.html#cb22-14" tabindex="-1"></a>compound_of_interest <span class="ot">&lt;-</span> <span class="st">&quot;2,6-diisopropylnaphthalene&quot;</span></span>
+<span id="cb22-15"><a href="reproduceerbaar-onderzoek.html#cb22-15" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="reproduceerbaar-onderzoek.html#cb22-16" tabindex="-1"></a><span class="co"># Filter alleen:</span></span>
+<span id="cb22-17"><a href="reproduceerbaar-onderzoek.html#cb22-17" tabindex="-1"></a><span class="co"># - dit compound</span></span>
+<span id="cb22-18"><a href="reproduceerbaar-onderzoek.html#cb22-18" tabindex="-1"></a><span class="co"># - experimentele metingen (dus geen controles)</span></span>
+<span id="cb22-19"><a href="reproduceerbaar-onderzoek.html#cb22-19" tabindex="-1"></a><span class="co"># - genormaliseerde respons (RawData_norm)</span></span>
+<span id="cb22-20"><a href="reproduceerbaar-onderzoek.html#cb22-20" tabindex="-1"></a>dose_data <span class="ot">&lt;-</span> data_norm <span class="sc">%&gt;%</span></span>
+<span id="cb22-21"><a href="reproduceerbaar-onderzoek.html#cb22-21" tabindex="-1"></a>  <span class="fu">filter</span>(compName <span class="sc">==</span> compound_of_interest,</span>
+<span id="cb22-22"><a href="reproduceerbaar-onderzoek.html#cb22-22" tabindex="-1"></a>         expType <span class="sc">==</span> <span class="st">&quot;experiment&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-23"><a href="reproduceerbaar-onderzoek.html#cb22-23" tabindex="-1"></a>  <span class="fu">select</span>(compConcentration, RawData_norm) <span class="sc">%&gt;%</span></span>
+<span id="cb22-24"><a href="reproduceerbaar-onderzoek.html#cb22-24" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb22-25"><a href="reproduceerbaar-onderzoek.html#cb22-25" tabindex="-1"></a></span>
+<span id="cb22-26"><a href="reproduceerbaar-onderzoek.html#cb22-26" tabindex="-1"></a><span class="co"># Controleer of de data er goed uitziet</span></span>
+<span id="cb22-27"><a href="reproduceerbaar-onderzoek.html#cb22-27" tabindex="-1"></a><span class="fu">head</span>(dose_data)</span>
+<span id="cb22-28"><a href="reproduceerbaar-onderzoek.html#cb22-28" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="reproduceerbaar-onderzoek.html#cb22-29" tabindex="-1"></a></span>
+<span id="cb22-30"><a href="reproduceerbaar-onderzoek.html#cb22-30" tabindex="-1"></a><span class="co"># Visualiseer ruwe dose–response relatie </span></span>
+<span id="cb22-31"><a href="reproduceerbaar-onderzoek.html#cb22-31" tabindex="-1"></a><span class="co"># Dit is een snelle check om te zien of er een dalende trend is.</span></span>
+<span id="cb22-32"><a href="reproduceerbaar-onderzoek.html#cb22-32" tabindex="-1"></a><span class="fu">ggplot</span>(dose_data,</span>
+<span id="cb22-33"><a href="reproduceerbaar-onderzoek.html#cb22-33" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> compConcentration, <span class="at">y =</span> RawData_norm)) <span class="sc">+</span></span>
+<span id="cb22-34"><a href="reproduceerbaar-onderzoek.html#cb22-34" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb22-35"><a href="reproduceerbaar-onderzoek.html#cb22-35" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb22-36"><a href="reproduceerbaar-onderzoek.html#cb22-36" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb22-37"><a href="reproduceerbaar-onderzoek.html#cb22-37" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb22-38"><a href="reproduceerbaar-onderzoek.html#cb22-38" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Ruwe dose–response voor&quot;</span>, compound_of_interest),</span>
+<span id="cb22-39"><a href="reproduceerbaar-onderzoek.html#cb22-39" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Concentratie (log10-schaal)&quot;</span>,</span>
+<span id="cb22-40"><a href="reproduceerbaar-onderzoek.html#cb22-40" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Genormaliseerde respons&quot;</span></span>
+<span id="cb22-41"><a href="reproduceerbaar-onderzoek.html#cb22-41" tabindex="-1"></a>  )</span>
+<span id="cb22-42"><a href="reproduceerbaar-onderzoek.html#cb22-42" tabindex="-1"></a></span>
+<span id="cb22-43"><a href="reproduceerbaar-onderzoek.html#cb22-43" tabindex="-1"></a></span>
+<span id="cb22-44"><a href="reproduceerbaar-onderzoek.html#cb22-44" tabindex="-1"></a><span class="co"># Fit een 4-parameter log-logistisch model (LL.4) </span></span>
+<span id="cb22-45"><a href="reproduceerbaar-onderzoek.html#cb22-45" tabindex="-1"></a><span class="co"># LL.4 heeft vier parameters:</span></span>
+<span id="cb22-46"><a href="reproduceerbaar-onderzoek.html#cb22-46" tabindex="-1"></a><span class="co"># - Lower: minimale respons</span></span>
+<span id="cb22-47"><a href="reproduceerbaar-onderzoek.html#cb22-47" tabindex="-1"></a><span class="co"># - Upper: maximale respons</span></span>
+<span id="cb22-48"><a href="reproduceerbaar-onderzoek.html#cb22-48" tabindex="-1"></a><span class="co"># - Slope: steilheid van de curve</span></span>
+<span id="cb22-49"><a href="reproduceerbaar-onderzoek.html#cb22-49" tabindex="-1"></a><span class="co"># - IC50: concentratie waarbij 50% effect optreedt</span></span>
+<span id="cb22-50"><a href="reproduceerbaar-onderzoek.html#cb22-50" tabindex="-1"></a>m_LL4 <span class="ot">&lt;-</span> <span class="fu">drm</span>(</span>
+<span id="cb22-51"><a href="reproduceerbaar-onderzoek.html#cb22-51" tabindex="-1"></a>  RawData_norm <span class="sc">~</span> compConcentration,</span>
+<span id="cb22-52"><a href="reproduceerbaar-onderzoek.html#cb22-52" tabindex="-1"></a>  <span class="at">data =</span> dose_data,</span>
+<span id="cb22-53"><a href="reproduceerbaar-onderzoek.html#cb22-53" tabindex="-1"></a>  <span class="at">fct =</span> <span class="fu">LL.4</span>(<span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Slope&quot;</span>, <span class="st">&quot;Lower&quot;</span>, <span class="st">&quot;Upper&quot;</span>, <span class="st">&quot;IC50&quot;</span>))</span>
+<span id="cb22-54"><a href="reproduceerbaar-onderzoek.html#cb22-54" tabindex="-1"></a>)</span>
+<span id="cb22-55"><a href="reproduceerbaar-onderzoek.html#cb22-55" tabindex="-1"></a></span>
+<span id="cb22-56"><a href="reproduceerbaar-onderzoek.html#cb22-56" tabindex="-1"></a><span class="co"># Bekijk modelresultaten</span></span>
+<span id="cb22-57"><a href="reproduceerbaar-onderzoek.html#cb22-57" tabindex="-1"></a><span class="fu">summary</span>(m_LL4)</span>
+<span id="cb22-58"><a href="reproduceerbaar-onderzoek.html#cb22-58" tabindex="-1"></a></span>
+<span id="cb22-59"><a href="reproduceerbaar-onderzoek.html#cb22-59" tabindex="-1"></a></span>
+<span id="cb22-60"><a href="reproduceerbaar-onderzoek.html#cb22-60" tabindex="-1"></a><span class="co"># Plot de dose–response curve </span></span>
+<span id="cb22-61"><a href="reproduceerbaar-onderzoek.html#cb22-61" tabindex="-1"></a><span class="co"># Dit geeft een nette S-curve met de ruwe punten erbij.</span></span>
+<span id="cb22-62"><a href="reproduceerbaar-onderzoek.html#cb22-62" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb22-63"><a href="reproduceerbaar-onderzoek.html#cb22-63" tabindex="-1"></a>  m_LL4,</span>
+<span id="cb22-64"><a href="reproduceerbaar-onderzoek.html#cb22-64" tabindex="-1"></a>  <span class="at">log =</span> <span class="st">&quot;x&quot;</span>,</span>
+<span id="cb22-65"><a href="reproduceerbaar-onderzoek.html#cb22-65" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Concentratie (log10-schaal)&quot;</span>,</span>
+<span id="cb22-66"><a href="reproduceerbaar-onderzoek.html#cb22-66" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Genormaliseerde respons&quot;</span>,</span>
+<span id="cb22-67"><a href="reproduceerbaar-onderzoek.html#cb22-67" tabindex="-1"></a>  <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;Dose–response curve voor&quot;</span>, compound_of_interest)</span>
+<span id="cb22-68"><a href="reproduceerbaar-onderzoek.html#cb22-68" tabindex="-1"></a>)</span>
+<span id="cb22-69"><a href="reproduceerbaar-onderzoek.html#cb22-69" tabindex="-1"></a></span>
+<span id="cb22-70"><a href="reproduceerbaar-onderzoek.html#cb22-70" tabindex="-1"></a></span>
+<span id="cb22-71"><a href="reproduceerbaar-onderzoek.html#cb22-71" tabindex="-1"></a><span class="co"># Bepaal de IC50 </span></span>
+<span id="cb22-72"><a href="reproduceerbaar-onderzoek.html#cb22-72" tabindex="-1"></a><span class="co"># ED() = Effective Dose</span></span>
+<span id="cb22-73"><a href="reproduceerbaar-onderzoek.html#cb22-73" tabindex="-1"></a><span class="co"># ED(model, 50) = concentratie waarbij 50% effect optreedt</span></span>
+<span id="cb22-74"><a href="reproduceerbaar-onderzoek.html#cb22-74" tabindex="-1"></a>IC50_result <span class="ot">&lt;-</span> <span class="fu">ED</span>(m_LL4, <span class="dv">50</span>, <span class="at">interval =</span> <span class="st">&quot;delta&quot;</span>)</span>
+<span id="cb22-75"><a href="reproduceerbaar-onderzoek.html#cb22-75" tabindex="-1"></a>IC50_result</span>
+<span id="cb22-76"><a href="reproduceerbaar-onderzoek.html#cb22-76" tabindex="-1"></a></span>
+<span id="cb22-77"><a href="reproduceerbaar-onderzoek.html#cb22-77" tabindex="-1"></a></span>
+<span id="cb22-78"><a href="reproduceerbaar-onderzoek.html#cb22-78" tabindex="-1"></a></span>
+<span id="cb22-79"><a href="reproduceerbaar-onderzoek.html#cb22-79" tabindex="-1"></a><span class="co"># Vergelijk modellen </span></span>
+<span id="cb22-80"><a href="reproduceerbaar-onderzoek.html#cb22-80" tabindex="-1"></a><span class="co"># Soms is een 3-parameter model (LL.3) beter.</span></span>
+<span id="cb22-81"><a href="reproduceerbaar-onderzoek.html#cb22-81" tabindex="-1"></a>m_LL3 <span class="ot">&lt;-</span> <span class="fu">drm</span>(</span>
+<span id="cb22-82"><a href="reproduceerbaar-onderzoek.html#cb22-82" tabindex="-1"></a>  RawData_norm <span class="sc">~</span> compConcentration,</span>
+<span id="cb22-83"><a href="reproduceerbaar-onderzoek.html#cb22-83" tabindex="-1"></a>  <span class="at">data =</span> dose_data,</span>
+<span id="cb22-84"><a href="reproduceerbaar-onderzoek.html#cb22-84" tabindex="-1"></a>  <span class="at">fct =</span> <span class="fu">LL.3</span>()</span>
+<span id="cb22-85"><a href="reproduceerbaar-onderzoek.html#cb22-85" tabindex="-1"></a>)</span>
+<span id="cb22-86"><a href="reproduceerbaar-onderzoek.html#cb22-86" tabindex="-1"></a></span>
+<span id="cb22-87"><a href="reproduceerbaar-onderzoek.html#cb22-87" tabindex="-1"></a><span class="co"># Vergelijk LL.3 en LL.4</span></span>
+<span id="cb22-88"><a href="reproduceerbaar-onderzoek.html#cb22-88" tabindex="-1"></a><span class="fu">anova</span>(m_LL3, m_LL4)</span>
+<span id="cb22-89"><a href="reproduceerbaar-onderzoek.html#cb22-89" tabindex="-1"></a></span>
+<span id="cb22-90"><a href="reproduceerbaar-onderzoek.html#cb22-90" tabindex="-1"></a><span class="co"># Als LL.4 significant beter is → LL.4 gebruiken.</span></span></code></pre></div>
+</div>
+<div id="opdracht-4b" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> opdracht 4b<a href="reproduceerbaar-onderzoek.html#opdracht-4b" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="referentie-naar-het-artikel" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Referentie naar het artikel<a href="reproduceerbaar-onderzoek.html#referentie-naar-het-artikel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Jing, S., &amp; Wang, H. (2025). <em>Infectivity and fatality of influenza in pre‑ and post‑COVID‑19 pandemic year</em>. <strong>PLOS Computational Biology, 21</strong>(7), e1013229.<br />
+<a href="https://doi.org/10.1371/journal.pcbi.1013229" class="uri">https://doi.org/10.1371/journal.pcbi.1013229</a></p>
+</div>
+<div id="onderzoeksvraag" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Onderzoeksvraag<a href="reproduceerbaar-onderzoek.html#onderzoeksvraag" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>De centrale onderzoeksvraag van het artikel is:<br />
+“Hoe hebben COVID‑19‑maatregelen (zoals lockdowns, mondmaskers en verminderde sociale interactie) de transmissie en sterfte van influenza beïnvloed vóór, tijdens en na de COVID‑19‑pandemie, en verschillen deze effecten tussen leeftijdsgroepen en influenzastammen?”</p>
+</div>
+<div id="samenvatting-van-methode-en-resultaten" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Samenvatting van methode en resultaten<a href="reproduceerbaar-onderzoek.html#samenvatting-van-methode-en-resultaten" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="methode" class="section level4 hasAnchor" number="6.2.3.1">
+<h4><span class="header-section-number">6.2.3.1</span> Methode<a href="reproduceerbaar-onderzoek.html#methode" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>De auteurs gebruikten een combinatie van:
+- age‑structured epidemiologische modellen (verschillende leeftijdsgroepen),
+- multi‑strain influenza‑modellen (influenza A en B),
+- en Amerikaanse influenza‑data uit drie periodes:
+- pre‑pandemie (2016–2019),
+- pandemie (2022–2023),
+- post‑pandemie (2023–2024).</p>
+<p>De modellen werden gekalibreerd op deze datasets om veranderingen in transmissie, infectiviteit en mortaliteit te kwantificeren.</p>
+</div>
+<div id="resultaten" class="section level4 hasAnchor" number="6.2.3.2">
+<h4><span class="header-section-number">6.2.3.2</span> Resultaten<a href="reproduceerbaar-onderzoek.html#resultaten" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Volwassen influenza‑transmissie daalde sterk tijdens de COVID‑19‑pandemie, maar herstelde snel na het opheffen van maatregelen.</li>
+<li>Transmissie onder kinderen bleef opvallend stabiel, ondanks de pandemie.</li>
+<li>Influenza‑mortaliteit steeg tijdelijk tijdens de pandemie, waarschijnlijk door verstoringen in de gezondheidszorg.</li>
+<li>Influenza A liet een duidelijke daling zien tijdens de pandemie en herstelde daarna.</li>
+<li>Influenza B vertoonde meer variabele patronen.</li>
+<li>De auteurs concluderen dat de impact van COVID‑19 maatregelen op influenza groot maar tijdelijk was, en dat influenza‑transmissie opmerkelijk resilient is.</li>
+</ul>
+</div>
+</div>
+<div id="beoordeling-van-reproduceerbaarheid-volgens-transparantiecriteria" class="section level3 hasAnchor" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Beoordeling van reproduceerbaarheid volgens transparantiecriteria<a href="reproduceerbaar-onderzoek.html#beoordeling-van-reproduceerbaarheid-volgens-transparantiecriteria" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="study-purpose" class="section level4 hasAnchor" number="6.2.4.1">
+<h4><span class="header-section-number">6.2.4.1</span> Study Purpose<a href="reproduceerbaar-onderzoek.html#study-purpose" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Ja</strong><br />
+Het artikel formuleert duidelijk het doel van het onderzoek: het kwantificeren van veranderingen in influenza‑transmissie en mortaliteit vóór, tijdens en na de COVID‑19 pandemie.</p>
+</div>
+<div id="data-availability-statement" class="section level4 hasAnchor" number="6.2.4.2">
+<h4><span class="header-section-number">6.2.4.2</span> Data Availability Statement<a href="reproduceerbaar-onderzoek.html#data-availability-statement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Ja</strong><br />
+Er is een aparte Data Availability sectie waarin staat dat alle gebruikte data publiek toegankelijk is.</p>
+</div>
+<div id="data-location" class="section level4 hasAnchor" number="6.2.4.3">
+<h4><span class="header-section-number">6.2.4.3</span> Data Location<a href="reproduceerbaar-onderzoek.html#data-location" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>CDC influenza surveillance databases</strong><br />
+De auteurs verwijzen naar openbare datasets van de Amerikaanse Centers for Disease Control and Prevention (CDC).</p>
+</div>
+<div id="study-location" class="section level4 hasAnchor" number="6.2.4.4">
+<h4><span class="header-section-number">6.2.4.4</span> Study Location<a href="reproduceerbaar-onderzoek.html#study-location" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Ja : Verenigde Staten</strong><br />
+In de methodesectie staat dat de analyses gebaseerd zijn op Amerikaanse influenza‑data.</p>
+</div>
+<div id="author-review" class="section level4 hasAnchor" number="6.2.4.5">
+<h4><span class="header-section-number">6.2.4.5</span> Author Review<a href="reproduceerbaar-onderzoek.html#author-review" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Professionele institutionele e‑mailadressen</strong><br />
+De auteurs gebruiken contactinformatie gekoppeld aan hun onderzoeksinstellingen.</p>
+</div>
+<div id="ethics-statement" class="section level4 hasAnchor" number="6.2.4.6">
+<h4><span class="header-section-number">6.2.4.6</span> Ethics Statement<a href="reproduceerbaar-onderzoek.html#ethics-statement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Nee (niet van toepassing)</strong><br />
+Er worden uitsluitend geaggregeerde publieke surveillance‑data gebruikt; er zijn geen menselijke of dierlijke proefpersonen.</p>
+</div>
+<div id="funding-statement" class="section level4 hasAnchor" number="6.2.4.7">
+<h4><span class="header-section-number">6.2.4.7</span> Funding Statement<a href="reproduceerbaar-onderzoek.html#funding-statement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Ja</strong><br />
+Het artikel bevat een duidelijke Funding Statement waarin financieringsbronnen worden vermeld.</p>
+</div>
+<div id="code-availability" class="section level4 hasAnchor" number="6.2.4.8">
+<h4><span class="header-section-number">6.2.4.8</span> Code Availability<a href="reproduceerbaar-onderzoek.html#code-availability" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Ja</strong><br />
+De auteurs verwijzen naar een publieke repository waarin de gebruikte modellen en scripts beschikbaar zijn.</p>
+</div>
+</div>
+<div id="beoordeling-van-reproduceerbaarheid-van-de-r-code" class="section level3 hasAnchor" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> Beoordeling van reproduceerbaarheid van de R code<a href="reproduceerbaar-onderzoek.html#beoordeling-van-reproduceerbaarheid-van-de-r-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dit is de link naar de github pagina: <a href="https://github.com/shuanglinjing/Long-COVID-impact-on-influenza-infectivity-and-fatality/tree/master" class="uri">https://github.com/shuanglinjing/Long-COVID-impact-on-influenza-infectivity-and-fatality/tree/master</a></p>
+<p>Ik kan nergens R code vinden en in de readme staat alleen de link van het artikel, op basis van mijn ervaring geef ik de reproduceerbaarheid voor nu dus even een 1.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="guerilla-analytics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introductie-projecticum.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "scroll_highlight": true
+  },
+  "toc_depth": 2
+});
+});
+</script>
+
+</body>
+
+</html>

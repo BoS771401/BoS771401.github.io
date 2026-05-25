@@ -1,0 +1,41 @@
+/* --- Hogeschool Utrecht Style --- */
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+.book .book-body .page-wrapper .page-inner {
+  max-width: 900px;
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  border-left: 6px solid #005bbb; /* HU-blauw */
+}
+
+.book .book-summary {
+  background: #e9eef5;
+}
+
+.book .book-summary ul.summary li a {
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.book .book-summary ul.summary li.active > a {
+  background: #005bbb;
+  color: white;
+}
+
+/* Headings */
+h1 {
+  color: #005bbb;
+  font-size: 32px;
+}
+
+h2 {
+  color: #003f7d;
+  margin-top: 40px;
+}

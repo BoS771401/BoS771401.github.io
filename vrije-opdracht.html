@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 4 Vrije opdracht | Portfolio</title>
+  <meta name="description" content="Hoofdstuk 4 Vrije opdracht | Portfolio" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 4 Vrije opdracht | Portfolio" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 4 Vrije opdracht | Portfolio" />
+  
+  
+  
+
+<meta name="author" content="Bo Steinschuld" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="toekomstgerichte-vragen.html"/>
+<link rel="next" href="guerilla-analytics.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welkom</a></li>
+<li class="chapter" data-level="2" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>2</b> CV</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="cv.html"><a href="cv.html#skills"><i class="fa fa-check"></i><b>2.1</b> Skills</a></li>
+<li class="chapter" data-level="2.2" data-path="cv.html"><a href="cv.html#technical-stack"><i class="fa fa-check"></i><b>2.2</b> Technical Stack</a></li>
+<li class="chapter" data-level="2.3" data-path="cv.html"><a href="cv.html#experience"><i class="fa fa-check"></i><b>2.3</b> Experience</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="cv.html"><a href="cv.html#student-life-sciences"><i class="fa fa-check"></i><b>2.3.1</b> Student Life Sciences</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cv.html"><a href="cv.html#projects"><i class="fa fa-check"></i><b>2.4</b> Projects</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="cv.html"><a href="cv.html#minor-food-and-pharma"><i class="fa fa-check"></i><b>2.4.1</b> Minor Food and Pharma</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cv.html"><a href="cv.html#credits"><i class="fa fa-check"></i><b>2.5</b> Credits</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html"><i class="fa fa-check"></i><b>3</b> Toekomstgerichte vragen</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#vraag-1"><i class="fa fa-check"></i><b>3.1</b> vraag 1</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#waar-wil-ik-over-12-jaar-zijn"><i class="fa fa-check"></i><b>3.1.1</b> Waar wil ik over 1–2 jaar zijn?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#vraag-2"><i class="fa fa-check"></i><b>3.2</b> Vraag 2</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#hoe-sta-ik-er-nu-voor-welke-skills-heb-ik-al"><i class="fa fa-check"></i><b>3.2.1</b> Hoe sta ik er nu voor? Welke skills heb ik al?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#vraag-3"><i class="fa fa-check"></i><b>3.3</b> Vraag 3</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="toekomstgerichte-vragen.html"><a href="toekomstgerichte-vragen.html#welke-skills-moetwil-ik-nog-leren"><i class="fa fa-check"></i><b>3.3.1</b> Welke skills moet/wil ik nog leren?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html"><i class="fa fa-check"></i><b>4</b> Vrije opdracht</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#introductie"><i class="fa fa-check"></i><b>4.1</b> Introductie</a></li>
+<li class="chapter" data-level="4.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#doel-van-de-opdracht"><i class="fa fa-check"></i><b>4.2</b> Doel van de opdracht</a></li>
+<li class="chapter" data-level="4.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#planning-32-uur"><i class="fa fa-check"></i><b>4.3</b> Planning (32 uur)</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-1-ori%C3%ABntatie-en-literatuur-6-uur-4-mei-2026"><i class="fa fa-check"></i><b>4.3.1</b> Fase 1: Oriëntatie en literatuur (6 uur; 4 mei 2026)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-2-opzetten-van-een-basis-registry-8-uur-13-mei-2026"><i class="fa fa-check"></i><b>4.3.2</b> Fase 2: Opzetten van een basis registry (8 uur; 13 mei 2026)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-3-integratieconcept-met-mcp-langchain-8-uur-16-mei-2026"><i class="fa fa-check"></i><b>4.3.3</b> Fase 3: Integratieconcept met MCP + LangChain (8 uur; 16 mei 2026)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#fase-4-rapportage-en-afronding-4-uur-17-mei-2026"><i class="fa fa-check"></i><b>4.3.4</b> Fase 4: Rapportage en afronding (4 uur; 17 mei 2026)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#smart-leerdoelen"><i class="fa fa-check"></i><b>4.4</b> SMART-leerdoelen</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#smart-doel-1-rnaseq-registry-bouwen"><i class="fa fa-check"></i><b>4.4.1</b> SMART-doel 1: RNA‑seq registry bouwen</a></li>
+<li class="chapter" data-level="4.4.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#smartdoel-2-mcpachtige-tools-en-agentsimulatie"><i class="fa fa-check"></i><b>4.4.2</b> SMART‑doel 2: MCP‑achtige tools en agent‑simulatie</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-fase-1"><i class="fa fa-check"></i><b>4.5</b> Uitwerking Fase 1</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#wat-is-mcp"><i class="fa fa-check"></i><b>4.5.1</b> Wat is MCP?</a></li>
+<li class="chapter" data-level="4.5.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#wat-is-langchain"><i class="fa fa-check"></i><b>4.5.2</b> Wat is LangChain?</a></li>
+<li class="chapter" data-level="4.5.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#rna-sequencing-tools-inventariseren"><i class="fa fa-check"></i><b>4.5.3</b> RNA-sequencing tools inventariseren</a></li>
+<li class="chapter" data-level="4.5.4" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#metadata-voor-de-registry"><i class="fa fa-check"></i><b>4.5.4</b> Metadata voor de registry</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-fase-2"><i class="fa fa-check"></i><b>4.6</b> Uitwerking Fase 2</a></li>
+<li class="chapter" data-level="4.7" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-fase-3"><i class="fa fa-check"></i><b>4.7</b> Uitwerking fase 3</a></li>
+<li class="chapter" data-level="4.8" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#reflectieverslag"><i class="fa fa-check"></i><b>4.8</b> Reflectieverslag</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#terugblik-op-het-proces-en-mijn-leerervaring"><i class="fa fa-check"></i><b>4.8.1</b> Terugblik op het proces en mijn leerervaring</a></li>
+<li class="chapter" data-level="4.8.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-van-mijn-smartleerdoelen"><i class="fa fa-check"></i><b>4.8.2</b> Uitwerking van mijn SMART‑leerdoelen</a></li>
+<li class="chapter" data-level="4.8.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#vervolgstappen-en-toekomst"><i class="fa fa-check"></i><b>4.8.3</b> Vervolgstappen en toekomst</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="guerilla-analytics.html"><a href="guerilla-analytics.html"><i class="fa fa-check"></i><b>5</b> Guerilla Analytics</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="guerilla-analytics.html"><a href="guerilla-analytics.html#opdracht-3a"><i class="fa fa-check"></i><b>5.1</b> opdracht 3a</a></li>
+<li class="chapter" data-level="5.2" data-path="guerilla-analytics.html"><a href="guerilla-analytics.html#opdracht-3b"><i class="fa fa-check"></i><b>5.2</b> opdracht 3b</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html"><i class="fa fa-check"></i><b>6</b> Reproduceerbaar onderzoek</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#opdracht-4a"><i class="fa fa-check"></i><b>6.1</b> Opdracht 4a</a></li>
+<li class="chapter" data-level="6.2" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#opdracht-4b"><i class="fa fa-check"></i><b>6.2</b> opdracht 4b</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#referentie-naar-het-artikel"><i class="fa fa-check"></i><b>6.2.1</b> Referentie naar het artikel</a></li>
+<li class="chapter" data-level="6.2.2" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#onderzoeksvraag"><i class="fa fa-check"></i><b>6.2.2</b> Onderzoeksvraag</a></li>
+<li class="chapter" data-level="6.2.3" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#samenvatting-van-methode-en-resultaten"><i class="fa fa-check"></i><b>6.2.3</b> Samenvatting van methode en resultaten</a></li>
+<li class="chapter" data-level="6.2.4" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#beoordeling-van-reproduceerbaarheid-volgens-transparantiecriteria"><i class="fa fa-check"></i><b>6.2.4</b> Beoordeling van reproduceerbaarheid volgens transparantiecriteria</a></li>
+<li class="chapter" data-level="6.2.5" data-path="reproduceerbaar-onderzoek.html"><a href="reproduceerbaar-onderzoek.html#beoordeling-van-reproduceerbaarheid-van-de-r-code"><i class="fa fa-check"></i><b>6.2.5</b> Beoordeling van reproduceerbaarheid van de R code</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="introductie-projecticum.html"><a href="introductie-projecticum.html"><i class="fa fa-check"></i><b>7</b> Introductie projecticum</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="introductie-projecticum.html"><a href="introductie-projecticum.html#referenties"><i class="fa fa-check"></i><b>7.1</b> Referenties</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="covid-19-report.html"><a href="covid-19-report.html"><i class="fa fa-check"></i><b>8</b> COVID-19 Report</a></li>
+<li class="chapter" data-level="9" data-path="bronnenlijst.html"><a href="bronnenlijst.html"><i class="fa fa-check"></i><b>9</b> Bronnenlijst</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="bronnenlijst.html"><a href="bronnenlijst.html#bronnen-die-gebruikt-zijn-voor-de-vrije-opdracht-codering"><i class="fa fa-check"></i><b>9.1</b> bronnen die gebruikt zijn voor de vrije opdracht codering:</a></li>
+<li class="chapter" data-level="9.2" data-path="bronnenlijst.html"><a href="bronnenlijst.html#bronnen-voor-theoretisch-kader-vrije-opdracht"><i class="fa fa-check"></i><b>9.2</b> bronnen voor theoretisch kader vrije opdracht:</a></li>
+<li class="chapter" data-level="9.3" data-path="bronnenlijst.html"><a href="bronnenlijst.html#bronnen-introductie-projecticum"><i class="fa fa-check"></i><b>9.3</b> bronnen introductie projecticum:</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Portfolio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vrije-opdracht" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Hoofdstuk 4</span> Vrije opdracht<a href="vrije-opdracht.html#vrije-opdracht" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introductie" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introductie<a href="vrije-opdracht.html#introductie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Voor mijn vrije opdracht kies ik ervoor om een nieuwe Data Science for Biology skill te leren die aansluit bij mijn toekomstige stage en mijn interesse in AI‑gestuurde bioinformatica workflows. Ik ga mij verdiepen in het bouwen van een doorzoekbare bioinformatica tool registry voor RNA‑seq workflows, gecombineerd met een deep dive in Model Context Protocol (MCP) en de AI‑frameworks LangChain en LangGraph.</p>
+<p>Het doel is om te begrijpen hoe moderne AI‑agents tools kunnen aanroepen, workflows kunnen structureren en beslissingen kunnen nemen op basis van context. Door een registry te koppelen aan MCP en vervolgens te gebruiken binnen LangChain/LangGraph, kan ik een fundament leggen voor een intelligente RNA‑seq workflow die automatisch de juiste tools selecteert op basis van input, metadata en workflow‑stappen.</p>
+<p>Deze skill sluit direct aan op mijn toekomstplan: tijdens mijn stage ga ik werken aan het automatiseren van RNA‑seq analyses. Door nu al te leren hoe tool‑registries, metadata‑structuren en AI‑workflow‑systemen werken, kan ik beter voorbereid starten en sneller waarde toevoegen.</p>
+</div>
+<div id="doel-van-de-opdracht" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Doel van de opdracht<a href="vrije-opdracht.html#doel-van-de-opdracht" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Een tool registry opzetten met metadata over RNA‑seq tools (bijv. FastQC, STAR, Salmon, DESeq2).<br />
+</li>
+<li>Begrijpen hoe Model Context Protocol (MCP) werkt om tools toegankelijk te maken voor AI‑agents.<br />
+</li>
+<li>Leren hoe LangChain reasoning‑ketens bouwt die tools kunnen aanroepen.</li>
+</ul>
+</div>
+<div id="planning-32-uur" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Planning (32 uur)<a href="vrije-opdracht.html#planning-32-uur" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="fase-1-oriëntatie-en-literatuur-6-uur-4-mei-2026" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Fase 1: Oriëntatie en literatuur (6 uur; 4 mei 2026)<a href="vrije-opdracht.html#fase-1-ori%C3%ABntatie-en-literatuur-6-uur-4-mei-2026" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Doelen:
+- begrijpen wat MCP is en hoe het tools beschikbaar maakt<br />
+- basisconcepten van LangChain en LangGraph leren<br />
+- voorbeelden van bioinformatica registries bestuderen (Bioconda, BioContainers, Bioconductor)</p>
+<p>Activiteiten:
+- documentatie lezen van MCP, LangChain en LangGraph<br />
+- RNA‑seq tools inventariseren<br />
+- bepalen welke metadata nodig is voor een registry</p>
+</div>
+<div id="fase-2-opzetten-van-een-basis-registry-8-uur-13-mei-2026" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Fase 2: Opzetten van een basis registry (8 uur; 13 mei 2026)<a href="vrije-opdracht.html#fase-2-opzetten-van-een-basis-registry-8-uur-13-mei-2026" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Doelen:
+- dataset maken met RNA‑seq tools en metadata<br />
+- registry opslaan in CSV of JSON<br />
+- nadenken over hoe MCP deze tools kan “exposen” aan een AI‑agent</p>
+<p>Activiteiten:
+- minimaal 15 tools verzamelen<br />
+- metadata toevoegen (functie, inputtype, outputtype, installatie, workflow‑stap)<br />
+- eerste versie van registry opslaan</p>
+</div>
+<div id="fase-3-integratieconcept-met-mcp-langchain-8-uur-16-mei-2026" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Fase 3: Integratieconcept met MCP + LangChain (8 uur; 16 mei 2026)<a href="vrije-opdracht.html#fase-3-integratieconcept-met-mcp-langchain-8-uur-16-mei-2026" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Doelen:
+- begrijpen hoe een AI‑agent tools kan aanroepen via MCP<br />
+- prototype‑scripts schrijven die registry‑items kunnen worden opgevraagd<br />
+- eenvoudige zoekfunctie bouwen in R of Python</p>
+<p>Activiteiten:
+- MCP‑voorbeeldprojecten bestuderen<br />
+- simpele tool‑call structuur opzetten<br />
+- zoekfunctie bouwen (bijv. “geef alle tools die FASTQ als input gebruiken”)</p>
+</div>
+<div id="fase-4-rapportage-en-afronding-4-uur-17-mei-2026" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Fase 4: Rapportage en afronding (4 uur; 17 mei 2026)<a href="vrije-opdracht.html#fase-4-rapportage-en-afronding-4-uur-17-mei-2026" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Doelen:
+- documenteren wat ik geleerd heb<br />
+- reflecteren op de skill<br />
+- voorbereiden op de uiteindelijke uitwerking</p>
+<p>Activiteiten:
+- RMarkdown‑verslag schrijven</p>
+</div>
+</div>
+<div id="smart-leerdoelen" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> SMART-leerdoelen<a href="vrije-opdracht.html#smart-leerdoelen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="smart-doel-1-rnaseq-registry-bouwen" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> SMART-doel 1: RNA‑seq registry bouwen<a href="vrije-opdracht.html#smart-doel-1-rnaseq-registry-bouwen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Specifiek:</strong><br />
+Ik wil een RNA‑seq tool‑registry ontwikkelen die minimaal tien tools bevat, elk beschreven met metadata zoals tool_name, input_type, output_type, workflow_step en installatiemethode. De registry moet worden opgeslagen in JSON‑formaat zodat deze direct bruikbaar is in Python en MCP‑achtige tools.</p>
+<p><strong>Meetbaar:</strong><br />
+Het doel is behaald wanneer de registry minimaal tien volledig ingevulde tools bevat en wanneer ik deze succesvol kan inlezen en doorzoeken in Python.</p>
+<p><strong>Acceptabel:</strong><br />
+Dit doel sluit aan bij mijn huidige kennis van R en bioinformatica, en vormt een haalbare stap richting het bouwen van een AI‑gestuurde workflow.</p>
+<p><strong>Realistisch:</strong><br />
+Het bouwen van een JSON‑registry is technisch haalbaar binnen mijn vaardigheden en de beschikbare tijd, zeker omdat ik de tools en metadata zelf kan selecteren.</p>
+<p><strong>Tijdsgebonden:</strong><br />
+Ik wil deze registry binnen de eerste 12 uur van het project afronden, zodat ik deze in de rest van het project kan gebruiken voor MCP‑tools en agent‑simulatie.</p>
+<p>&lt;br.
+<br></p>
+</div>
+<div id="smartdoel-2-mcpachtige-tools-en-agentsimulatie" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> SMART‑doel 2: MCP‑achtige tools en agent‑simulatie<a href="vrije-opdracht.html#smartdoel-2-mcpachtige-tools-en-agentsimulatie" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Specifiek:</strong><br />
+Ik wil minimaal drie MCP‑achtige tools in Python bouwen (zoals search_by_input, search_by_workflow_step en get_tool_info) die de registry kunnen doorzoeken en JSON‑achtige output teruggeven. Daarnaast wil ik een Python‑agent schrijven die ik via LM Studio kan aanroepen.</p>
+<p><strong>Meetbaar:</strong><br />
+Het doel is behaald wanneer alle drie de tools zonder fouten draaien in een testbestand (test_tools.py) en wanneer ik de agent.py succesvol kan starten en een vraag kan stellen.</p>
+<p><strong>Acceptabel:</strong><br />
+Dit doel past binnen mijn leerdoelen, omdat ik hiermee zowel Python‑vaardigheden als AI‑agentconcepten ontwikkel zonder dat ik een volledige MCP‑server hoef te implementeren.</p>
+<p><strong>Realistisch:</strong><br />
+Het bouwen van drie eenvoudige tools en een basisagent is haalbaar binnen mijn huidige niveau, zeker omdat ik de registry al beschikbaar heb als dataset.</p>
+<p><strong>Tijdsgebonden:</strong><br />
+Ik wil deze tools en de agent binnen 20 uur afronden, zodat ik in de resterende tijd mijn verslag kan schrijven en conceptueel kan uitleggen hoe LangChain en LangGraph hierbij zouden aansluiten.</p>
+</div>
+</div>
+<div id="uitwerking-fase-1" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Uitwerking Fase 1<a href="vrije-opdracht.html#uitwerking-fase-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="wat-is-mcp" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Wat is MCP?<a href="vrije-opdracht.html#wat-is-mcp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Het Model Context Protocol (MCP) vormt een gestandaardiseerd mechanisme waarmee AI‑agents beschikbare tools kunnen ontdekken, interpreteren en aanroepen binnen een workflow. MCP fungeert als een uniforme beschrijvingslaag waarin tools worden vastgelegd met hun naam, parameters, vereisten en verwachte output. Door deze standaardisatie kan een AI‑agent autonoom bepalen welke tool geschikt is voor een specifieke taak, zonder dat hiervoor handmatige koppelingen of complexe integraties nodig zijn. Dit maakt MCP bijzonder waardevol in omgevingen waar meerdere tools en systemen samenkomen, omdat het consistentie en interoperabiliteit bevordert (Anthropic, 2024).</p>
+</div>
+<div id="wat-is-langchain" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Wat is LangChain?<a href="vrije-opdracht.html#wat-is-langchain" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>LangChain is een modulair framework dat AI‑systemen ondersteunt bij het uitvoeren van complexe taken door middel van stapsgewijze redenering en dynamische toolselectie. Het framework bestaat uit componenten zoals agents, tools en chains, die gezamenlijk een flexibele structuur vormen voor het bouwen van geavanceerde AI‑gedreven workflows. Een LangChain‑agent kan een gebruikersvraag analyseren, bepalen welke tool het meest geschikt is, deze tool aanroepen en de gegenereerde output integreren in een coherent antwoord. Hierdoor biedt LangChain een krachtige basis voor het verbinden van AI‑modellen met externe functies, API’s en databronnen (LangChain, 2023).</p>
+</div>
+<div id="rna-sequencing-tools-inventariseren" class="section level3 hasAnchor" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> RNA-sequencing tools inventariseren<a href="vrije-opdracht.html#rna-sequencing-tools-inventariseren" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Om te bepalen welke tools in de registry opgenomen moesten worden, is eerst een analyse uitgevoerd van de standaard RNA‑seq workflow. Deze workflow bestaat uit meerdere opeenvolgende stappen, waaronder kwaliteitscontrole, trimming, alignment, quantificatie, differentiële expressie en aanvullende utility‑stappen voor BAM/SAM‑verwerking. In plaats van slechts één representatieve tool per stap te selecteren, is in deze fase gekozen voor een bredere en realistischer set van vijftien veelgebruikte bioinformatica‑tools. Deze selectie vormt het conceptuele fundament voor de registry die in latere fasen door MCP‑achtige tools en AI‑agents gebruikt kan worden.
+<br>
+De opgenomen tools zijn:
+<br></p>
+<ul>
+<li><p>Kwaliteitscontrole: FastQC, MultiQC</p></li>
+<li><p>Trimming: Cutadapt, Trimmomatic</p></li>
+<li><p>Alignment: Bowtie2, STAR, HISAT2</p></li>
+<li><p>Quantificatie: FeatureCounts, Salmon, Kallisto</p></li>
+<li><p>Differentiële expressie: DESeq2, edgeR, Limma</p></li>
+<li><p>Utility (BAM/SAM‑verwerking): Samtools, Picard</p></li>
+</ul>
+<p><br>
+Deze vijftien tools vormen gezamenlijk een volledige, flexibele en reproduceerbare RNA‑seq analyseketen. De tools nog niet technisch geïntegreerd, maar worden ze gebruikt om de structuur, metadata‑vereisten en doorzoekbaarheid van de registry te definiëren. Deze registry vormt vervolgens de basis voor de MCP‑achtige tools en de AI‑agent die in fase 3 zijn ontwikkeld.</p>
+</div>
+<div id="metadata-voor-de-registry" class="section level3 hasAnchor" number="4.5.4">
+<h3><span class="header-section-number">4.5.4</span> Metadata voor de registry<a href="vrije-opdracht.html#metadata-voor-de-registry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Op basis van bestaande bioinformatica‑ecosystemen (zoals Bioconda en BioContainers) is een set kernmetadata‑velden vastgesteld die noodzakelijk is om tools op een uniforme en doorzoekbare manier te beschrijven (Grüning et al., 2018). Voor fase 1 wordt gewerkt met één veld per categorie:
+<br></p>
+<ul>
+<li><p>tool_name (identiteit)</p></li>
+<li><p>function (beschrijving van de tool)</p></li>
+<li><p>input_type (vereiste inputbestanden)</p></li>
+<li><p>output_type (gegenereerde output)</p></li>
+<li><p>workflow_step (positie in de RNA‑seq workflow)
+<br>
+Deze beperkte set is voldoende om de registry‑structuur te ontwerpen. In latere fasen kan deze metadata worden uitgebreid en gekoppeld aan MCP en LangChain.</p></li>
+</ul>
+<p><br>
+<br>
+<br>
+<br></p>
+</div>
+</div>
+<div id="uitwerking-fase-2" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Uitwerking Fase 2<a href="vrije-opdracht.html#uitwerking-fase-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="vrije-opdracht.html#cb1-1" tabindex="-1"></a><span class="co">#install.packages(&quot;jsonlite&quot;)</span></span>
+<span id="cb1-2"><a href="vrije-opdracht.html#cb1-2" tabindex="-1"></a><span class="co">#install.packages(&quot;tibble&quot;)</span></span>
+<span id="cb1-3"><a href="vrije-opdracht.html#cb1-3" tabindex="-1"></a><span class="co">#install.packages(&quot;tidyverse&quot;)</span></span>
+<span id="cb1-4"><a href="vrije-opdracht.html#cb1-4" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb1-5"><a href="vrije-opdracht.html#cb1-5" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-6"><a href="vrije-opdracht.html#cb1-6" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.2.1     ✔ purrr     1.2.2
+## ✔ forcats   1.0.1     ✔ readr     2.2.0
+## ✔ ggplot2   4.0.3     ✔ stringr   1.6.0
+## ✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter()  masks stats::filter()
+## ✖ purrr::flatten() masks jsonlite::flatten()
+## ✖ dplyr::lag()     masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="vrije-opdracht.html#cb3-1" tabindex="-1"></a>registry <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-2"><a href="vrije-opdracht.html#cb3-2" tabindex="-1"></a>  <span class="at">tool_name =</span> <span class="fu">c</span>(</span>
+<span id="cb3-3"><a href="vrije-opdracht.html#cb3-3" tabindex="-1"></a>    <span class="st">&quot;FastQC&quot;</span>, <span class="st">&quot;MultiQC&quot;</span>,</span>
+<span id="cb3-4"><a href="vrije-opdracht.html#cb3-4" tabindex="-1"></a>    <span class="st">&quot;Cutadapt&quot;</span>, <span class="st">&quot;Trimmomatic&quot;</span>,</span>
+<span id="cb3-5"><a href="vrije-opdracht.html#cb3-5" tabindex="-1"></a>    <span class="st">&quot;Bowtie2&quot;</span>, <span class="st">&quot;STAR&quot;</span>, <span class="st">&quot;HISAT2&quot;</span>,</span>
+<span id="cb3-6"><a href="vrije-opdracht.html#cb3-6" tabindex="-1"></a>    <span class="st">&quot;FeatureCounts&quot;</span>, <span class="st">&quot;Salmon&quot;</span>, <span class="st">&quot;Kallisto&quot;</span>,</span>
+<span id="cb3-7"><a href="vrije-opdracht.html#cb3-7" tabindex="-1"></a>    <span class="st">&quot;DESeq2&quot;</span>, <span class="st">&quot;edgeR&quot;</span>, <span class="st">&quot;Limma&quot;</span>,</span>
+<span id="cb3-8"><a href="vrije-opdracht.html#cb3-8" tabindex="-1"></a>    <span class="st">&quot;Samtools&quot;</span>, <span class="st">&quot;Picard&quot;</span></span>
+<span id="cb3-9"><a href="vrije-opdracht.html#cb3-9" tabindex="-1"></a>  ),</span>
+<span id="cb3-10"><a href="vrije-opdracht.html#cb3-10" tabindex="-1"></a>  </span>
+<span id="cb3-11"><a href="vrije-opdracht.html#cb3-11" tabindex="-1"></a>  <span class="at">tool_function =</span> <span class="fu">c</span>(</span>
+<span id="cb3-12"><a href="vrije-opdracht.html#cb3-12" tabindex="-1"></a>    <span class="st">&quot;Quality control of FASTQ files&quot;</span>,</span>
+<span id="cb3-13"><a href="vrije-opdracht.html#cb3-13" tabindex="-1"></a>    <span class="st">&quot;Aggregates QC reports&quot;</span>,</span>
+<span id="cb3-14"><a href="vrije-opdracht.html#cb3-14" tabindex="-1"></a>    <span class="st">&quot;Adapter trimming&quot;</span>,</span>
+<span id="cb3-15"><a href="vrije-opdracht.html#cb3-15" tabindex="-1"></a>    <span class="st">&quot;Quality and adapter trimming&quot;</span>,</span>
+<span id="cb3-16"><a href="vrije-opdracht.html#cb3-16" tabindex="-1"></a>    <span class="st">&quot;Read alignment&quot;</span>,</span>
+<span id="cb3-17"><a href="vrije-opdracht.html#cb3-17" tabindex="-1"></a>    <span class="st">&quot;Splice-aware read alignment&quot;</span>,</span>
+<span id="cb3-18"><a href="vrije-opdracht.html#cb3-18" tabindex="-1"></a>    <span class="st">&quot;Splice-aware read alignment&quot;</span>,</span>
+<span id="cb3-19"><a href="vrije-opdracht.html#cb3-19" tabindex="-1"></a>    <span class="st">&quot;Gene-level quantification&quot;</span>,</span>
+<span id="cb3-20"><a href="vrije-opdracht.html#cb3-20" tabindex="-1"></a>    <span class="st">&quot;Transcript quantification&quot;</span>,</span>
+<span id="cb3-21"><a href="vrije-opdracht.html#cb3-21" tabindex="-1"></a>    <span class="st">&quot;Transcript quantification&quot;</span>,</span>
+<span id="cb3-22"><a href="vrije-opdracht.html#cb3-22" tabindex="-1"></a>    <span class="st">&quot;Differential gene expression&quot;</span>,</span>
+<span id="cb3-23"><a href="vrije-opdracht.html#cb3-23" tabindex="-1"></a>    <span class="st">&quot;Differential gene expression&quot;</span>,</span>
+<span id="cb3-24"><a href="vrije-opdracht.html#cb3-24" tabindex="-1"></a>    <span class="st">&quot;Differential gene expression&quot;</span>,</span>
+<span id="cb3-25"><a href="vrije-opdracht.html#cb3-25" tabindex="-1"></a>    <span class="st">&quot;BAM/SAM manipulation&quot;</span>,</span>
+<span id="cb3-26"><a href="vrije-opdracht.html#cb3-26" tabindex="-1"></a>    <span class="st">&quot;BAM/SAM processing and metrics&quot;</span></span>
+<span id="cb3-27"><a href="vrije-opdracht.html#cb3-27" tabindex="-1"></a>  ),</span>
+<span id="cb3-28"><a href="vrije-opdracht.html#cb3-28" tabindex="-1"></a>  </span>
+<span id="cb3-29"><a href="vrije-opdracht.html#cb3-29" tabindex="-1"></a>  <span class="at">input_type =</span> <span class="fu">c</span>(</span>
+<span id="cb3-30"><a href="vrije-opdracht.html#cb3-30" tabindex="-1"></a>    <span class="st">&quot;FASTQ&quot;</span>, <span class="st">&quot;QC reports&quot;</span>,</span>
+<span id="cb3-31"><a href="vrije-opdracht.html#cb3-31" tabindex="-1"></a>    <span class="st">&quot;FASTQ&quot;</span>, <span class="st">&quot;FASTQ&quot;</span>,</span>
+<span id="cb3-32"><a href="vrije-opdracht.html#cb3-32" tabindex="-1"></a>    <span class="st">&quot;FASTQ&quot;</span>, <span class="st">&quot;FASTQ&quot;</span>, <span class="st">&quot;FASTQ&quot;</span>,</span>
+<span id="cb3-33"><a href="vrije-opdracht.html#cb3-33" tabindex="-1"></a>    <span class="st">&quot;BAM&quot;</span>, <span class="st">&quot;FASTQ&quot;</span>, <span class="st">&quot;FASTQ&quot;</span>,</span>
+<span id="cb3-34"><a href="vrije-opdracht.html#cb3-34" tabindex="-1"></a>    <span class="st">&quot;Count matrix&quot;</span>, <span class="st">&quot;Count matrix&quot;</span>, <span class="st">&quot;Count matrix&quot;</span>,</span>
+<span id="cb3-35"><a href="vrije-opdracht.html#cb3-35" tabindex="-1"></a>    <span class="st">&quot;BAM&quot;</span>, <span class="st">&quot;BAM&quot;</span></span>
+<span id="cb3-36"><a href="vrije-opdracht.html#cb3-36" tabindex="-1"></a>  ),</span>
+<span id="cb3-37"><a href="vrije-opdracht.html#cb3-37" tabindex="-1"></a>  </span>
+<span id="cb3-38"><a href="vrije-opdracht.html#cb3-38" tabindex="-1"></a>  <span class="at">output_type =</span> <span class="fu">c</span>(</span>
+<span id="cb3-39"><a href="vrije-opdracht.html#cb3-39" tabindex="-1"></a>    <span class="st">&quot;HTML report&quot;</span>, <span class="st">&quot;HTML report&quot;</span>,</span>
+<span id="cb3-40"><a href="vrije-opdracht.html#cb3-40" tabindex="-1"></a>    <span class="st">&quot;Trimmed FASTQ&quot;</span>, <span class="st">&quot;Trimmed FASTQ&quot;</span>,</span>
+<span id="cb3-41"><a href="vrije-opdracht.html#cb3-41" tabindex="-1"></a>    <span class="st">&quot;BAM&quot;</span>, <span class="st">&quot;BAM&quot;</span>, <span class="st">&quot;BAM&quot;</span>,</span>
+<span id="cb3-42"><a href="vrije-opdracht.html#cb3-42" tabindex="-1"></a>    <span class="st">&quot;Count matrix&quot;</span>, <span class="st">&quot;Quantification files&quot;</span>, <span class="st">&quot;Quantification files&quot;</span>,</span>
+<span id="cb3-43"><a href="vrije-opdracht.html#cb3-43" tabindex="-1"></a>    <span class="st">&quot;DGE results&quot;</span>, <span class="st">&quot;DGE results&quot;</span>, <span class="st">&quot;DGE results&quot;</span>,</span>
+<span id="cb3-44"><a href="vrije-opdracht.html#cb3-44" tabindex="-1"></a>    <span class="st">&quot;Processed BAM&quot;</span>, <span class="st">&quot;Metrics report&quot;</span></span>
+<span id="cb3-45"><a href="vrije-opdracht.html#cb3-45" tabindex="-1"></a>  ),</span>
+<span id="cb3-46"><a href="vrije-opdracht.html#cb3-46" tabindex="-1"></a>  </span>
+<span id="cb3-47"><a href="vrije-opdracht.html#cb3-47" tabindex="-1"></a>  <span class="at">install_method =</span> <span class="fu">c</span>(</span>
+<span id="cb3-48"><a href="vrije-opdracht.html#cb3-48" tabindex="-1"></a>    <span class="st">&quot;Conda&quot;</span>, <span class="st">&quot;Conda&quot;</span>,</span>
+<span id="cb3-49"><a href="vrije-opdracht.html#cb3-49" tabindex="-1"></a>    <span class="st">&quot;Conda&quot;</span>, <span class="st">&quot;Conda&quot;</span>,</span>
+<span id="cb3-50"><a href="vrije-opdracht.html#cb3-50" tabindex="-1"></a>    <span class="st">&quot;Conda&quot;</span>, <span class="st">&quot;Conda&quot;</span>, <span class="st">&quot;Conda&quot;</span>,</span>
+<span id="cb3-51"><a href="vrije-opdracht.html#cb3-51" tabindex="-1"></a>    <span class="st">&quot;Conda&quot;</span>, <span class="st">&quot;Conda&quot;</span>, <span class="st">&quot;Conda&quot;</span>,</span>
+<span id="cb3-52"><a href="vrije-opdracht.html#cb3-52" tabindex="-1"></a>    <span class="st">&quot;Bioconductor&quot;</span>, <span class="st">&quot;Bioconductor&quot;</span>, <span class="st">&quot;Bioconductor&quot;</span>,</span>
+<span id="cb3-53"><a href="vrije-opdracht.html#cb3-53" tabindex="-1"></a>    <span class="st">&quot;Conda&quot;</span>, <span class="st">&quot;Conda&quot;</span></span>
+<span id="cb3-54"><a href="vrije-opdracht.html#cb3-54" tabindex="-1"></a>  ),</span>
+<span id="cb3-55"><a href="vrije-opdracht.html#cb3-55" tabindex="-1"></a>  </span>
+<span id="cb3-56"><a href="vrije-opdracht.html#cb3-56" tabindex="-1"></a>  <span class="at">workflow_step =</span> <span class="fu">c</span>(</span>
+<span id="cb3-57"><a href="vrije-opdracht.html#cb3-57" tabindex="-1"></a>    <span class="st">&quot;QC&quot;</span>, <span class="st">&quot;QC&quot;</span>,</span>
+<span id="cb3-58"><a href="vrije-opdracht.html#cb3-58" tabindex="-1"></a>    <span class="st">&quot;Trimming&quot;</span>, <span class="st">&quot;Trimming&quot;</span>,</span>
+<span id="cb3-59"><a href="vrije-opdracht.html#cb3-59" tabindex="-1"></a>    <span class="st">&quot;Alignment&quot;</span>, <span class="st">&quot;Alignment&quot;</span>, <span class="st">&quot;Alignment&quot;</span>,</span>
+<span id="cb3-60"><a href="vrije-opdracht.html#cb3-60" tabindex="-1"></a>    <span class="st">&quot;Quantification&quot;</span>, <span class="st">&quot;Quantification&quot;</span>, <span class="st">&quot;Quantification&quot;</span>,</span>
+<span id="cb3-61"><a href="vrije-opdracht.html#cb3-61" tabindex="-1"></a>    <span class="st">&quot;DGE&quot;</span>, <span class="st">&quot;DGE&quot;</span>, <span class="st">&quot;DGE&quot;</span>,</span>
+<span id="cb3-62"><a href="vrije-opdracht.html#cb3-62" tabindex="-1"></a>    <span class="st">&quot;Utility&quot;</span>, <span class="st">&quot;Utility&quot;</span></span>
+<span id="cb3-63"><a href="vrije-opdracht.html#cb3-63" tabindex="-1"></a>  )</span>
+<span id="cb3-64"><a href="vrije-opdracht.html#cb3-64" tabindex="-1"></a>)</span>
+<span id="cb3-65"><a href="vrije-opdracht.html#cb3-65" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="vrije-opdracht.html#cb3-66" tabindex="-1"></a><span class="co"># Opslaan als CSV</span></span>
+<span id="cb3-67"><a href="vrije-opdracht.html#cb3-67" tabindex="-1"></a><span class="fu">write.csv</span>(registry, <span class="st">&quot;C:/Users/Boste/OneDrive/Documenten/rna_registry/data/registry.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-68"><a href="vrije-opdracht.html#cb3-68" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="vrije-opdracht.html#cb3-69" tabindex="-1"></a><span class="co"># Opslaan als JSON</span></span>
+<span id="cb3-70"><a href="vrije-opdracht.html#cb3-70" tabindex="-1"></a><span class="fu">write_json</span>(registry, <span class="st">&quot;C:/Users/Boste/OneDrive/Documenten/rna_registry/data/registry.json&quot;</span>, <span class="at">pretty =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Deze registry vormt de basis voor het exposen van tools via het Model Context Protocol (MCP). MCP gebruikt JSON‑gebaseerde tool‑descripties om AI‑agents te laten ontdekken welke tools beschikbaar zijn, welke input en output ze verwachten en in welke workflow‑stap ze thuishoren.</p>
+<p>Omdat de registry zowel in CSV als JSON is opgeslagen, kan een MCP‑server in fase 3 deze JSON‑structuur direct inlezen en elke tool beschikbaar maken als een “exposed tool”. Een AI‑agent kan vervolgens op basis van metadata zoals workflow_step, input_type en output_type bepalen welke tool geschikt is voor een bepaalde taak. Het maken van MCP tools volgt in fase 3.</p>
+</div>
+<div id="uitwerking-fase-3" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Uitwerking fase 3<a href="vrije-opdracht.html#uitwerking-fase-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Naast het opbouwen van mijn RNA‑seq tool‑registry heb ik mij ook verdiept in de technische basis die nodig is om deze registry later te kunnen koppelen aan AI‑agents en workflow‑systemen. Omdat Python de primaire taal is voor het bouwen van MCP‑tools en het simuleren van AI‑agentgedrag, heb ik ervoor gekozen om mij eerst de basis van Python eigen te maken. Hiervoor heb ik verschillende YouTube‑video’s bekeken over Python‑fundamentals, JSON‑verwerking en het schrijven van eenvoudige functies. Deze zelfstudie vormde een belangrijke stap, omdat ik hiermee de kennis opdeed die nodig is om mijn registry daadwerkelijk te kunnen gebruiken in een AI‑context.</p>
+<p>Met deze basiskennis heb ik vervolgens een eigen Python‑script geschreven, agent.py, waarin ik een eenvoudige AI‑agent heb gebouwd. Deze agent kan ik lokaal aanroepen via LM Studio, dat fungeert als de LLM‑backend waarop mijn agent draait. Hierdoor kon ik experimenteren met het versturen van prompts, het ontvangen van antwoorden en het begrijpen van hoe een agent intern omgaat met context, geschiedenis en tool‑aanroepen. Het bouwen en testen van deze agent was een waardevolle oefening om inzicht te krijgen in hoe een AI‑systeem functioneert als tussenlaag tussen gebruiker en tools.</p>
+<p>Parallel aan het leren van Python heb ik mijn RNA‑seq tool‑registry uitgebreid en opgeslagen in een JSON‑formaat dat ideaal is voor gebruik binnen Python. Deze registry bevat niet alleen de namen van tools, maar ook metadata zoals input‑ en outputtype, workflow‑stap, installatie‑instructies en een beschrijving van de functionaliteit. Deze rijkere structuur maakt het mogelijk om de registry te doorzoeken op basis van criteria zoals inputtype (bijvoorbeeld FASTQ), workflow‑stap (bijvoorbeeld alignment) of gewenste output. Dit sluit direct aan op hoe MCP‑tools informatie zouden aanleveren aan een AI‑agent.</p>
+<p>Nu ik zowel een werkende registry als een functionerende agent heb, kan ik de volgende stap zetten: het bouwen van MCP‑achtige tools in Python. Dit zijn kleine functies die zich gedragen als MCP‑tools, zoals search_registry, filter_by_input of get_tool_info. Deze tools nemen gestructureerde input aan, doorzoeken de registry en geven een JSON‑achtige response terug. Hiermee kan ik demonstreren hoe een agent in theorie een tool zou aanroepen via MCP, zonder dat ik een volledige MCP‑server hoef te implementeren. In mijn verslag beschrijf ik vervolgens hoe deze MCP‑tools conceptueel geïntegreerd zouden kunnen worden binnen LangChain en LangGraph, door middel van pseudo‑code en architectuurdiagrammen.</p>
+<p>Door deze stappen te combineren; het leren van Python, het bouwen van een agent, het aanroepen van deze agent via LM Studio, het opzetten van een rijke registry en het voorbereiden van MCP‑tools, leg ik een solide fundament voor een intelligente RNA‑seq workflow. De registry vormt de kennislaag, de MCP‑tools de operationele laag en de agent de interface die deze componenten in latere fasen kan verbinden met LangChain en LangGraph.</p>
+<p><strong>Ai agent in Python aanroepen</strong>
+<br>
+Om te demonstreren hoe mijn MCP‑achtige tools in Python functioneren, heb ik een eenvoudige AI‑agent gebouwd in het script agent.py. Deze agent maakt gebruik van mijn registry en kan vragen beantwoorden door de juiste Python‑functies aan te roepen. Deze code zet in neer in een R chunk omdat ik geen python code kan verwerken in dit Rmd bestand.</p>
+<p>Deze agent.py is opgezet als een lichte, lokaal draaiende AI‑assistent die via LM Studio wordt aangestuurd. Bovenaan het script wordt een ChatOpenAI‑object geïnitialiseerd dat verbinding maakt met het lokale model op <a href="http://127.0.0.1:1234/v1" class="uri">http://127.0.0.1:1234/v1</a>. Hierdoor kan het model prompts verwerken zonder externe API‑sleutels of internetverbinding. De instellingen zijn bewust compact gehouden om snelle reacties te bevorderen.</p>
+<div style="text-align:center;">
+<p><img src="images/lmstudios_model_running.png" width="90%"></p>
+</div>
+<p>Het script bevat daarnaast twee eenvoudige tools: read_file en write_file. Hiermee kunnen bestanden worden gelezen en geschreven wanneer een opdracht wordt gegeven in de vorm van use <toolnaam> <argument>. Deze tools worden opgeslagen in een dictionary, zodat de agent ze kan herkennen en uitvoeren.</p>
+<p>Om de prestaties stabiel te houden, wordt een beperkte chatgeschiedenis bijgehouden. Via trim_history() blijft alleen de meest recente context behouden, waardoor de prompt klein blijft en de responstijd kort.</p>
+<p>De kernfunctionaliteit bevindt zich in agent_response(). Deze functie controleert eerst of een tool moet worden aangeroepen. Als dat niet het geval is, wordt een compacte prompt opgebouwd op basis van de laatste berichten en doorgestuurd naar het taalmodel. Het gegenereerde antwoord wordt vervolgens toegevoegd aan de geschiedenis en teruggegeven aan de gebruiker.</p>
+<p>Tot slot bevat het script een eenvoudige loop in main() die de agent start in de terminal. Via deze loop kunnen vragen worden ingevoerd en verwerkt totdat een stopcommando wordt gegeven.</p>
+<p>Kort samengevat: deze code realiseert een snelle, minimalistische AI‑agent die lokaal draait via LM Studio, eenvoudige tools kan uitvoeren en een klein geheugen gebruikt om efficiënt te blijven reageren.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="vrije-opdracht.html#cb4-1" tabindex="-1"></a>from langchain_openai import ChatOpenAI</span>
+<span id="cb4-2"><a href="vrije-opdracht.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="vrije-opdracht.html#cb4-3" tabindex="-1"></a>llm <span class="ot">=</span> <span class="fu">ChatOpenAI</span>(</span>
+<span id="cb4-4"><a href="vrije-opdracht.html#cb4-4" tabindex="-1"></a>    <span class="at">base_url=</span><span class="st">&quot;http://127.0.0.1:1234/v1&quot;</span>,</span>
+<span id="cb4-5"><a href="vrije-opdracht.html#cb4-5" tabindex="-1"></a>    <span class="at">api_key=</span><span class="st">&quot;lm-studio&quot;</span>,</span>
+<span id="cb4-6"><a href="vrije-opdracht.html#cb4-6" tabindex="-1"></a>    <span class="at">model=</span><span class="st">&quot;google/gemma-4-e4b&quot;</span>,</span>
+<span id="cb4-7"><a href="vrije-opdracht.html#cb4-7" tabindex="-1"></a>    <span class="at">temperature=</span><span class="fl">0.2</span>,</span>
+<span id="cb4-8"><a href="vrije-opdracht.html#cb4-8" tabindex="-1"></a>    <span class="at">max_tokens=</span><span class="dv">512</span>  <span class="co"># Token-limiet voor snelheid</span></span>
+<span id="cb4-9"><a href="vrije-opdracht.html#cb4-9" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a href="vrije-opdracht.html#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="vrije-opdracht.html#cb4-11" tabindex="-1"></a><span class="co">#tools</span></span>
+<span id="cb4-12"><a href="vrije-opdracht.html#cb4-12" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="vrije-opdracht.html#cb4-13" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="vrije-opdracht.html#cb4-14" tabindex="-1"></a>def <span class="fu">read_file</span>(path<span class="sc">:</span> str) <span class="ot">-&gt;</span> str<span class="sc">:</span></span>
+<span id="cb4-15"><a href="vrije-opdracht.html#cb4-15" tabindex="-1"></a>    try<span class="sc">:</span></span>
+<span id="cb4-16"><a href="vrije-opdracht.html#cb4-16" tabindex="-1"></a>        with <span class="fu">open</span>(path, <span class="st">&quot;r&quot;</span>) as f<span class="sc">:</span></span>
+<span id="cb4-17"><a href="vrije-opdracht.html#cb4-17" tabindex="-1"></a>            return <span class="fu">f.read</span>()</span>
+<span id="cb4-18"><a href="vrije-opdracht.html#cb4-18" tabindex="-1"></a>    except Exception as e<span class="sc">:</span></span>
+<span id="cb4-19"><a href="vrije-opdracht.html#cb4-19" tabindex="-1"></a>        return f<span class="st">&quot;Fout bij lezen: {e}&quot;</span></span>
+<span id="cb4-20"><a href="vrije-opdracht.html#cb4-20" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="vrije-opdracht.html#cb4-21" tabindex="-1"></a>def <span class="fu">write_file</span>(args<span class="sc">:</span> str) <span class="ot">-&gt;</span> str<span class="sc">:</span></span>
+<span id="cb4-22"><a href="vrije-opdracht.html#cb4-22" tabindex="-1"></a>    try<span class="sc">:</span></span>
+<span id="cb4-23"><a href="vrije-opdracht.html#cb4-23" tabindex="-1"></a>        path, content <span class="ot">=</span> <span class="fu">args.split</span>(<span class="st">&quot;:::&quot;</span>, <span class="dv">1</span>)</span>
+<span id="cb4-24"><a href="vrije-opdracht.html#cb4-24" tabindex="-1"></a>        with <span class="fu">open</span>(path, <span class="st">&quot;w&quot;</span>) as f<span class="sc">:</span></span>
+<span id="cb4-25"><a href="vrije-opdracht.html#cb4-25" tabindex="-1"></a>            <span class="fu">f.write</span>(content)</span>
+<span id="cb4-26"><a href="vrije-opdracht.html#cb4-26" tabindex="-1"></a>        return f<span class="st">&quot;Bestand opgeslagen: {path}&quot;</span></span>
+<span id="cb4-27"><a href="vrije-opdracht.html#cb4-27" tabindex="-1"></a>    except Exception as e<span class="sc">:</span></span>
+<span id="cb4-28"><a href="vrije-opdracht.html#cb4-28" tabindex="-1"></a>        return f<span class="st">&quot;Fout bij schrijven: {e}&quot;</span></span>
+<span id="cb4-29"><a href="vrije-opdracht.html#cb4-29" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="vrije-opdracht.html#cb4-30" tabindex="-1"></a>tools <span class="ot">=</span> {</span>
+<span id="cb4-31"><a href="vrije-opdracht.html#cb4-31" tabindex="-1"></a>    <span class="st">&quot;read_file&quot;</span><span class="sc">:</span> read_file,</span>
+<span id="cb4-32"><a href="vrije-opdracht.html#cb4-32" tabindex="-1"></a>    <span class="st">&quot;write_file&quot;</span><span class="sc">:</span> write_file</span>
+<span id="cb4-33"><a href="vrije-opdracht.html#cb4-33" tabindex="-1"></a>}</span>
+<span id="cb4-34"><a href="vrije-opdracht.html#cb4-34" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="vrije-opdracht.html#cb4-35" tabindex="-1"></a><span class="co"># memory aanpassen zodat de ai agent sneller antwoord geeft en minder data opslaat</span></span>
+<span id="cb4-36"><a href="vrije-opdracht.html#cb4-36" tabindex="-1"></a>chat_history <span class="ot">=</span> []</span>
+<span id="cb4-37"><a href="vrije-opdracht.html#cb4-37" tabindex="-1"></a>MAX_HISTORY <span class="ot">=</span> <span class="dv">6</span>  <span class="co"># maximaal 6 berichten (3 user + 3 assistant)</span></span>
+<span id="cb4-38"><a href="vrije-opdracht.html#cb4-38" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="vrije-opdracht.html#cb4-39" tabindex="-1"></a>def <span class="fu">trim_history</span>()<span class="sc">:</span></span>
+<span id="cb4-40"><a href="vrije-opdracht.html#cb4-40" tabindex="-1"></a>    global chat_history</span>
+<span id="cb4-41"><a href="vrije-opdracht.html#cb4-41" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">len</span>(chat_history) <span class="sc">&gt;</span> MAX_HISTORY<span class="sc">:</span></span>
+<span id="cb4-42"><a href="vrije-opdracht.html#cb4-42" tabindex="-1"></a>        chat_history <span class="ot">=</span> chat_history[<span class="sc">-</span>MAX_HISTORY<span class="sc">:</span>]</span>
+<span id="cb4-43"><a href="vrije-opdracht.html#cb4-43" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="vrije-opdracht.html#cb4-44" tabindex="-1"></a><span class="co">#agent prompt</span></span>
+<span id="cb4-45"><a href="vrije-opdracht.html#cb4-45" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="vrije-opdracht.html#cb4-46" tabindex="-1"></a>def <span class="fu">agent_response</span>(user_input<span class="sc">:</span> str)<span class="sc">:</span></span>
+<span id="cb4-47"><a href="vrije-opdracht.html#cb4-47" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="vrije-opdracht.html#cb4-48" tabindex="-1"></a>    <span class="co"># Tool-aanroep</span></span>
+<span id="cb4-49"><a href="vrije-opdracht.html#cb4-49" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">user_input.startswith</span>(<span class="st">&quot;use &quot;</span>)<span class="sc">:</span></span>
+<span id="cb4-50"><a href="vrije-opdracht.html#cb4-50" tabindex="-1"></a>        try<span class="sc">:</span></span>
+<span id="cb4-51"><a href="vrije-opdracht.html#cb4-51" tabindex="-1"></a>            _, tool_name, arg <span class="ot">=</span> <span class="fu">user_input.split</span>(<span class="st">&quot; &quot;</span>, <span class="dv">2</span>)</span>
+<span id="cb4-52"><a href="vrije-opdracht.html#cb4-52" tabindex="-1"></a>            <span class="cf">if</span> tool_name <span class="cf">in</span> tools<span class="sc">:</span></span>
+<span id="cb4-53"><a href="vrije-opdracht.html#cb4-53" tabindex="-1"></a>                return tools[tool_name](arg)</span>
+<span id="cb4-54"><a href="vrije-opdracht.html#cb4-54" tabindex="-1"></a>            <span class="cf">else</span><span class="sc">:</span></span>
+<span id="cb4-55"><a href="vrije-opdracht.html#cb4-55" tabindex="-1"></a>                return f<span class="st">&quot;Tool &#39;{tool_name}&#39; bestaat niet.&quot;</span></span>
+<span id="cb4-56"><a href="vrije-opdracht.html#cb4-56" tabindex="-1"></a>        except<span class="sc">:</span></span>
+<span id="cb4-57"><a href="vrije-opdracht.html#cb4-57" tabindex="-1"></a>            return <span class="st">&quot;Gebruik: use &lt;toolnaam&gt; &lt;argument&gt;&quot;</span></span>
+<span id="cb4-58"><a href="vrije-opdracht.html#cb4-58" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="vrije-opdracht.html#cb4-59" tabindex="-1"></a><span class="co"># Trim geschiedenis</span></span>
+<span id="cb4-60"><a href="vrije-opdracht.html#cb4-60" tabindex="-1"></a>    <span class="fu">trim_history</span>()</span>
+<span id="cb4-61"><a href="vrije-opdracht.html#cb4-61" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="vrije-opdracht.html#cb4-62" tabindex="-1"></a><span class="co"># Snelle, lichte prompt</span></span>
+<span id="cb4-63"><a href="vrije-opdracht.html#cb4-63" tabindex="-1"></a>    messages <span class="ot">=</span> [</span>
+<span id="cb4-64"><a href="vrije-opdracht.html#cb4-64" tabindex="-1"></a>        {<span class="st">&quot;role&quot;</span><span class="sc">:</span> <span class="st">&quot;system&quot;</span>, <span class="st">&quot;content&quot;</span><span class="sc">:</span> <span class="st">&quot;Je bent een snelle, efficiënte AI-assistent. Houd antwoorden kort en duidelijk.&quot;</span>}</span>
+<span id="cb4-65"><a href="vrije-opdracht.html#cb4-65" tabindex="-1"></a>    ]</span>
+<span id="cb4-66"><a href="vrije-opdracht.html#cb4-66" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="vrije-opdracht.html#cb4-67" tabindex="-1"></a>    <span class="co"># Alleen laatste 6 berichten meesturen</span></span>
+<span id="cb4-68"><a href="vrije-opdracht.html#cb4-68" tabindex="-1"></a>    <span class="cf">for</span> role, msg <span class="cf">in</span> chat_history<span class="sc">:</span></span>
+<span id="cb4-69"><a href="vrije-opdracht.html#cb4-69" tabindex="-1"></a>        <span class="fu">messages.append</span>({<span class="st">&quot;role&quot;</span><span class="sc">:</span> role, <span class="st">&quot;content&quot;</span><span class="sc">:</span> msg})</span>
+<span id="cb4-70"><a href="vrije-opdracht.html#cb4-70" tabindex="-1"></a></span>
+<span id="cb4-71"><a href="vrije-opdracht.html#cb4-71" tabindex="-1"></a>    <span class="fu">messages.append</span>({<span class="st">&quot;role&quot;</span><span class="sc">:</span> <span class="st">&quot;user&quot;</span>, <span class="st">&quot;content&quot;</span><span class="sc">:</span> user_input})</span>
+<span id="cb4-72"><a href="vrije-opdracht.html#cb4-72" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="vrije-opdracht.html#cb4-73" tabindex="-1"></a>    <span class="co"># LLM aanroepen</span></span>
+<span id="cb4-74"><a href="vrije-opdracht.html#cb4-74" tabindex="-1"></a>    response <span class="ot">=</span> <span class="fu">llm.invoke</span>(messages)</span>
+<span id="cb4-75"><a href="vrije-opdracht.html#cb4-75" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="vrije-opdracht.html#cb4-76" tabindex="-1"></a>    <span class="co"># Opslaan in geschiedenis</span></span>
+<span id="cb4-77"><a href="vrije-opdracht.html#cb4-77" tabindex="-1"></a>    <span class="fu">chat_history.append</span>((<span class="st">&quot;user&quot;</span>, user_input))</span>
+<span id="cb4-78"><a href="vrije-opdracht.html#cb4-78" tabindex="-1"></a>    <span class="fu">chat_history.append</span>((<span class="st">&quot;assistant&quot;</span>, response.content))</span>
+<span id="cb4-79"><a href="vrije-opdracht.html#cb4-79" tabindex="-1"></a></span>
+<span id="cb4-80"><a href="vrije-opdracht.html#cb4-80" tabindex="-1"></a>    return response.content</span>
+<span id="cb4-81"><a href="vrije-opdracht.html#cb4-81" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="vrije-opdracht.html#cb4-82" tabindex="-1"></a><span class="co"># loop</span></span>
+<span id="cb4-83"><a href="vrije-opdracht.html#cb4-83" tabindex="-1"></a></span>
+<span id="cb4-84"><a href="vrije-opdracht.html#cb4-84" tabindex="-1"></a>def <span class="fu">main</span>()<span class="sc">:</span></span>
+<span id="cb4-85"><a href="vrije-opdracht.html#cb4-85" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Geoptimaliseerde agent gestart (LM Studio). Typ &#39;stop&#39; om te stoppen.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-86"><a href="vrije-opdracht.html#cb4-86" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="vrije-opdracht.html#cb4-87" tabindex="-1"></a>    <span class="cf">while</span> True<span class="sc">:</span></span>
+<span id="cb4-88"><a href="vrije-opdracht.html#cb4-88" tabindex="-1"></a>        user_input <span class="ot">=</span> <span class="fu">input</span>(<span class="st">&quot;Jij: &quot;</span>)</span>
+<span id="cb4-89"><a href="vrije-opdracht.html#cb4-89" tabindex="-1"></a></span>
+<span id="cb4-90"><a href="vrije-opdracht.html#cb4-90" tabindex="-1"></a>        <span class="cf">if</span> <span class="fu">user_input.lower</span>() <span class="cf">in</span> [<span class="st">&quot;stop&quot;</span>, <span class="st">&quot;exit&quot;</span>, <span class="st">&quot;quit&quot;</span>]<span class="sc">:</span></span>
+<span id="cb4-91"><a href="vrije-opdracht.html#cb4-91" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;Agent gestopt.&quot;</span>)</span>
+<span id="cb4-92"><a href="vrije-opdracht.html#cb4-92" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb4-93"><a href="vrije-opdracht.html#cb4-93" tabindex="-1"></a></span>
+<span id="cb4-94"><a href="vrije-opdracht.html#cb4-94" tabindex="-1"></a>        output <span class="ot">=</span> <span class="fu">agent_response</span>(user_input)</span>
+<span id="cb4-95"><a href="vrije-opdracht.html#cb4-95" tabindex="-1"></a>        <span class="fu">print</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Agent:&quot;</span>, output, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-96"><a href="vrije-opdracht.html#cb4-96" tabindex="-1"></a></span>
+<span id="cb4-97"><a href="vrije-opdracht.html#cb4-97" tabindex="-1"></a><span class="cf">if</span> __name__ <span class="sc">==</span> <span class="st">&quot;__main__&quot;</span><span class="sc">:</span></span>
+<span id="cb4-98"><a href="vrije-opdracht.html#cb4-98" tabindex="-1"></a>    <span class="fu">main</span>()</span></code></pre></div>
+<p>Door het script uit te voeren via de terminal met <code>python agent.py</code> wordt de agent gestart en kan ik interactief prompts invoeren. Hieronder is een screenshot te zien van de agent in actie, waarbij een vraag wordt gesteld en de gegenereerde output zichtbaar wordt.</p>
+<div style="text-align:center;">
+<p><img src="images/ai_agent_in_python.png" width="90%"></p>
+</div>
+<p><strong>MCP tools maken</strong>
+<br>
+De MCP‑achtige tools vormen een eenvoudige interface om de RNA‑seq registry te doorzoeken. Elke functie opent het JSON‑bestand registry.json en filtert de inhoud op basis van een specifiek criterium. De tool search_by_input() zoekt alle tools die een bepaald input‑type gebruiken, terwijl search_by_workflow_step() tools selecteert op basis van hun positie in de workflow. Met get_tool_info() kan informatie over één specifieke tool worden opgehaald, en list_all_tools()</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="vrije-opdracht.html#cb5-1" tabindex="-1"></a>import json</span>
+<span id="cb5-2"><a href="vrije-opdracht.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="vrije-opdracht.html#cb5-3" tabindex="-1"></a>def <span class="fu">search_by_input</span>(input_type)<span class="sc">:</span></span>
+<span id="cb5-4"><a href="vrije-opdracht.html#cb5-4" tabindex="-1"></a>    with <span class="fu">open</span>(<span class="st">&quot;registry.json&quot;</span>) as f<span class="sc">:</span></span>
+<span id="cb5-5"><a href="vrije-opdracht.html#cb5-5" tabindex="-1"></a>        data <span class="ot">=</span> <span class="fu">json.load</span>(f)</span>
+<span id="cb5-6"><a href="vrije-opdracht.html#cb5-6" tabindex="-1"></a>    results <span class="ot">=</span> [tool <span class="cf">for</span> tool <span class="cf">in</span> data <span class="cf">if</span> tool[<span class="st">&quot;input_type&quot;</span>] <span class="sc">==</span> input_type]</span>
+<span id="cb5-7"><a href="vrije-opdracht.html#cb5-7" tabindex="-1"></a>    return {<span class="st">&quot;results&quot;</span><span class="sc">:</span> results}</span>
+<span id="cb5-8"><a href="vrije-opdracht.html#cb5-8" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="vrije-opdracht.html#cb5-9" tabindex="-1"></a>def <span class="fu">search_by_workflow_step</span>(step)<span class="sc">:</span></span>
+<span id="cb5-10"><a href="vrije-opdracht.html#cb5-10" tabindex="-1"></a>    with <span class="fu">open</span>(<span class="st">&quot;registry.json&quot;</span>) as f<span class="sc">:</span></span>
+<span id="cb5-11"><a href="vrije-opdracht.html#cb5-11" tabindex="-1"></a>        data <span class="ot">=</span> <span class="fu">json.load</span>(f)</span>
+<span id="cb5-12"><a href="vrije-opdracht.html#cb5-12" tabindex="-1"></a>    results <span class="ot">=</span> [tool <span class="cf">for</span> tool <span class="cf">in</span> data <span class="cf">if</span> tool[<span class="st">&quot;workflow_step&quot;</span>] <span class="sc">==</span> step]</span>
+<span id="cb5-13"><a href="vrije-opdracht.html#cb5-13" tabindex="-1"></a>    return {<span class="st">&quot;results&quot;</span><span class="sc">:</span> results}</span>
+<span id="cb5-14"><a href="vrije-opdracht.html#cb5-14" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="vrije-opdracht.html#cb5-15" tabindex="-1"></a>def <span class="fu">get_tool_info</span>(tool_name)<span class="sc">:</span></span>
+<span id="cb5-16"><a href="vrije-opdracht.html#cb5-16" tabindex="-1"></a>    with <span class="fu">open</span>(<span class="st">&quot;registry.json&quot;</span>) as f<span class="sc">:</span></span>
+<span id="cb5-17"><a href="vrije-opdracht.html#cb5-17" tabindex="-1"></a>        data <span class="ot">=</span> <span class="fu">json.load</span>(f)</span>
+<span id="cb5-18"><a href="vrije-opdracht.html#cb5-18" tabindex="-1"></a>    <span class="cf">for</span> tool <span class="cf">in</span> data<span class="sc">:</span></span>
+<span id="cb5-19"><a href="vrije-opdracht.html#cb5-19" tabindex="-1"></a>        <span class="cf">if</span> tool[<span class="st">&quot;tool_name&quot;</span>]<span class="fu">.lower</span>() <span class="sc">==</span> <span class="fu">tool_name.lower</span>()<span class="sc">:</span></span>
+<span id="cb5-20"><a href="vrije-opdracht.html#cb5-20" tabindex="-1"></a>            return tool</span>
+<span id="cb5-21"><a href="vrije-opdracht.html#cb5-21" tabindex="-1"></a>    return {<span class="st">&quot;error&quot;</span><span class="sc">:</span> <span class="st">&quot;Tool not found&quot;</span>}</span>
+<span id="cb5-22"><a href="vrije-opdracht.html#cb5-22" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="vrije-opdracht.html#cb5-23" tabindex="-1"></a>def <span class="fu">list_all_tools</span>()<span class="sc">:</span></span>
+<span id="cb5-24"><a href="vrije-opdracht.html#cb5-24" tabindex="-1"></a>    with <span class="fu">open</span>(<span class="st">&quot;registry.json&quot;</span>) as f<span class="sc">:</span></span>
+<span id="cb5-25"><a href="vrije-opdracht.html#cb5-25" tabindex="-1"></a>        data <span class="ot">=</span> <span class="fu">json.load</span>(f)</span>
+<span id="cb5-26"><a href="vrije-opdracht.html#cb5-26" tabindex="-1"></a>    return {<span class="st">&quot;tools&quot;</span><span class="sc">:</span> data}</span></code></pre></div>
+<p>Ik de functionaliteit van de MCP‑achtige tools daadwerkelijk getest in Python. Dit gebeurt door de Python‑functies direct aan te roepen, die dezelfde logica uitvoeren als een echte MCP‑tool.om de MCP tools te testen heb ik een apart bestand aangemaakt in Python genaamd test_tools.py. Hierin zet ik het volgende:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="vrije-opdracht.html#cb6-1" tabindex="-1"></a>from mcp_tools import search_by_input, search_by_workflow_step, get_tool_info, list_all_tools</span>
+<span id="cb6-2"><a href="vrije-opdracht.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="vrije-opdracht.html#cb6-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">search_by_input</span>(<span class="st">&quot;FASTQ&quot;</span>))</span>
+<span id="cb6-4"><a href="vrije-opdracht.html#cb6-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">search_by_workflow_step</span>(<span class="st">&quot;alignment&quot;</span>))</span>
+<span id="cb6-5"><a href="vrije-opdracht.html#cb6-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">get_tool_info</span>(<span class="st">&quot;STAR&quot;</span>))</span>
+<span id="cb6-6"><a href="vrije-opdracht.html#cb6-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">list_all_tools</span>())</span></code></pre></div>
+De output van de test in Python is het volgende:
+<div style="text-align:center;">
+<p><img src="images/testing_mcp_tools.png" width="90%"></p>
+</div>
+<p><strong>functie van LangChain</strong>
+<br>
+In een volledige implementatie zou LangChain worden gebruikt om mijn MCP‑achtige tools te integreren in een AI‑agent. LangChain biedt een standaardinterface voor tools, waardoor mijn Python‑functies (zoals search_by_input en get_tool_info) direct als “tools” beschikbaar zouden zijn voor de agent. De agent kan dan op basis van de gebruikersvraag automatisch beslissen welke tool moet worden aangeroepen. Hoewel ik LangChain in dit project niet implementeer, laat ik conceptueel zien hoe mijn registry en MCP‑tools in een LangChain‑agent zouden passen.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="vrije-opdracht.html#cb7-1" tabindex="-1"></a><span class="co"># tools = [</span></span>
+<span id="cb7-2"><a href="vrije-opdracht.html#cb7-2" tabindex="-1"></a><span class="co">#    Tool(</span></span>
+<span id="cb7-3"><a href="vrije-opdracht.html#cb7-3" tabindex="-1"></a><span class="co">#        name=&quot;search_by_input&quot;,</span></span>
+<span id="cb7-4"><a href="vrije-opdracht.html#cb7-4" tabindex="-1"></a><span class="co">#        func=lambda x: search_by_input(x[&quot;input_type&quot;]),</span></span>
+<span id="cb7-5"><a href="vrije-opdracht.html#cb7-5" tabindex="-1"></a><span class="co">#        description=&quot;Zoekt tools op basis van inputtype.&quot;</span></span>
+<span id="cb7-6"><a href="vrije-opdracht.html#cb7-6" tabindex="-1"></a><span class="co">#    )</span></span>
+<span id="cb7-7"><a href="vrije-opdracht.html#cb7-7" tabindex="-1"></a><span class="co">#]</span></span>
+<span id="cb7-8"><a href="vrije-opdracht.html#cb7-8" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-9"><a href="vrije-opdracht.html#cb7-9" tabindex="-1"></a><span class="co"># agent = initialize_agent(tools=tools, llm=llm)</span></span>
+<span id="cb7-10"><a href="vrije-opdracht.html#cb7-10" tabindex="-1"></a><span class="co"># agent.run(&quot;Welke tools gebruiken FASTQ?&quot;)</span></span></code></pre></div>
+</div>
+<div id="reflectieverslag" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Reflectieverslag<a href="vrije-opdracht.html#reflectieverslag" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="terugblik-op-het-proces-en-mijn-leerervaring" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Terugblik op het proces en mijn leerervaring<a href="vrije-opdracht.html#terugblik-op-het-proces-en-mijn-leerervaring" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In de afgelopen drie fasen heb ik een traject doorlopen waarin ik zowel conceptuele kennis als praktische vaardigheden heb ontwikkeld. Het project begon met het verkennen van theoretische fundamenten zoals het Model Context Protocol (MCP), LangChain en LangGraph. Deze concepten waren in het begin vrij abstract, maar gaven mij al snel richting bij het ontwerpen van mijn eigen RNA‑seq registry en het nadenken over hoe AI‑agents tools kunnen ontdekken en gebruiken. Vervolgens heb ik in R een uitgebreide registry opgebouwd met relevante RNA‑seq tools en metadata, die later de basis vormde voor mijn Python‑implementatie.</p>
+<p>Daarna verschoof de focus naar Python: een taal waarin ik weinig ervaring had, maar die essentieel bleek voor het bouwen van MCP‑achtige tools en een werkende AI‑agent. Door tutorials te volgen en veel te experimenteren, heb ik geleerd hoe ik JSON‑data kan verwerken, functies kan schrijven en een agent kan aanroepen via LM Studio. Uiteindelijk heb ik MCP‑achtige tools gebouwd die mijn registry kunnen doorzoeken, en deze getest in een apart Python‑script. Dit gaf mij inzicht in hoe een agent en tools samenwerken binnen een AI‑workflow. Het project heeft mij niet alleen technische vaardigheden opgeleverd, maar ook een beter begrip van hoe moderne AI‑systemen worden opgebouwd en hoe je complexe concepten vertaalt naar werkende prototypes.</p>
+<p><br></p>
+</div>
+<div id="uitwerking-van-mijn-smartleerdoelen" class="section level3 hasAnchor" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> Uitwerking van mijn SMART‑leerdoelen<a href="vrije-opdracht.html#uitwerking-van-mijn-smartleerdoelen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="smartdoel-1-rnaseq-registry-bouwen" class="section level4 hasAnchor" number="4.8.2.1">
+<h4><span class="header-section-number">4.8.2.1</span> SMART‑doel 1: RNA‑seq registry bouwen<a href="vrije-opdracht.html#smartdoel-1-rnaseq-registry-bouwen" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Specifiek:</strong><br />
+Ik wilde een RNA‑seq registry ontwikkelen met minimaal tien tools, elk voorzien van metadata zoals tool_name, input_type, output_type, workflow_step en installatiemethode.<br />
+<strong>Meetbaar:</strong><br />
+Het doel was behaald wanneer de registry volledig gevuld was en succesvol kon worden ingelezen en doorzocht in Python.<br />
+<strong>Acceptabel:</strong><br />
+Dit doel sloot aan bij mijn bestaande kennis van R en bioinformatica.<br />
+<strong>Realistisch:</strong><br />
+Het bouwen van een JSON‑registry was haalbaar binnen mijn vaardigheden en tijd.<br />
+<strong>Tijdsgebonden:</strong><br />
+Ik wilde dit binnen de eerste 12 uur afronden.</p>
+<p><strong>STARR‑reflectie op doel 1</strong></p>
+<p><strong>Situatie:</strong><br />
+Aan het begin van het project had ik een duidelijk beeld nodig van welke tools in een RNA‑seq workflow thuishoren en hoe ik deze formeel kon beschrijven.</p>
+<p><strong>Taak:</strong><br />
+Mijn taak was om een gestructureerde registry te maken die later bruikbaar zou zijn voor MCP‑tools en een AI‑agent.</p>
+<p><strong>Actie:</strong><br />
+Ik heb RNA‑seq tools geïnventariseerd, metadata‑velden bepaald en in R een tibble opgebouwd die ik vervolgens exporteerde naar JSON. Hierbij heb ik bewust gekozen voor velden die aansluiten bij MCP‑toolbeschrijvingen.</p>
+<p><strong>Resultaat:</strong><br />
+De registry bevat meer dan tien tools, is volledig doorzoekbaar en wordt succesvol ingelezen in Python. Dit maakt het mogelijk om MCP‑achtige tools te bouwen die deze registry gebruiken.</p>
+<p><strong>Reflectie:</strong><br />
+Ik ben tevreden over dit resultaat. Het doel was concreet en goed uitvoerbaar. Ik heb geleerd hoe belangrijk consistente metadata is voor AI‑systemen en hoe een goed ontworpen dataset de basis vormt voor verdere automatisering.</p>
+<p><br></p>
+</div>
+<div id="smartdoel-2-mcpachtige-tools-en-pythonagent" class="section level4 hasAnchor" number="4.8.2.2">
+<h4><span class="header-section-number">4.8.2.2</span> SMART‑doel 2: MCP‑achtige tools en Python‑agent<a href="vrije-opdracht.html#smartdoel-2-mcpachtige-tools-en-pythonagent" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Specifiek:</strong><br />
+Ik wilde minimaal drie MCP‑achtige tools bouwen (zoals search_by_input, search_by_workflow_step en get_tool_info) en een Python‑agent schrijven die ik via LM Studio kan aanroepen.<br />
+<strong>Meetbaar:</strong><br />
+Het doel was behaald wanneer de tools foutloos draaiden in test_tools.py en de agent.py succesvol vragen kon verwerken.<br />
+<strong>Acceptabel:</strong><br />
+Dit doel paste bij mijn leerdoelen rondom Python en AI‑agents.<br />
+<strong>Realistisch:</strong><br />
+Het bouwen van drie tools en een basisagent was haalbaar binnen de beschikbare tijd.<br />
+<strong>Tijdsgebonden:</strong><br />
+Ik wilde dit binnen 20 uur afronden.</p>
+<p><strong>STARR‑reflectie op doel 2</strong></p>
+<p><strong>Situatie:</strong><br />
+Ik had nog geen tot weinig Python‑ervaring, maar moest wel MCP‑achtige tools bouwen en een agent laten draaien.</p>
+<p><strong>Taak:</strong><br />
+Mijn taak was om Python‑functies te schrijven die de registry konden doorzoeken en een agent te bouwen die deze functies zou kunnen gebruiken.</p>
+<p><strong>Actie:</strong><br />
+Ik heb Python‑tutorials gevolgd, mijn eigen agent.py geschreven en MCP‑achtige tools ontwikkeld. Vervolgens heb ik een testbestand gemaakt om de tools systematisch te testen.</p>
+<p><strong>Resultaat:</strong><br />
+Alle tools werken correct en geven JSON‑achtige output terug. De agent draait via LM Studio en kan vragen verwerken. Hiermee heb ik het volledige doel behaald.</p>
+<p><strong>Reflectie:</strong><br />
+Ik heb veel geleerd over Python, JSON‑verwerking en AI‑agentgedrag. Het was uitdagend, maar het gaf me een goed inzicht in hoe tools en agents samenwerken. Ik ben vooral trots dat ik dit zonder voorkennis van Python heb kunnen realiseren.Het heeft me echter meer dan 20 uur gekost, door het literatuuronderzoek, het aanleren van python basis taal en het uitzoeken hoe een MCP tool en registry data set gemaakt moesten worden.</p>
+<p><br></p>
+</div>
+</div>
+<div id="vervolgstappen-en-toekomst" class="section level3 hasAnchor" number="4.8.3">
+<h3><span class="header-section-number">4.8.3</span> Vervolgstappen en toekomst<a href="vrije-opdracht.html#vervolgstappen-en-toekomst" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hoewel ik in deze fasen veel heb bereikt, zie ik nog duidelijke vervolgstappen. Een belangrijke volgende stap is het daadwerkelijk implementeren van een MCP‑server, zodat mijn MCP‑achtige tools via een echt protocol kunnen worden aangeroepen. Daarnaast wil ik mijn registry koppelen aan een echte LangChain‑agent, zodat toolselectie automatisch verloopt op basis van gebruikersvragen.</p>
+<p>Het meest interessante vervolg ligt echter bij LangGraph. LangGraph biedt een manier om complexe workflows te modelleren als graphs met nodes, edges en state‑management. Voor een RNA‑seq workflow is dit ideaal: elke stap (QC, trimming, alignment, quantificatie, DGE) kan worden weergegeven als een node, terwijl de afhankelijkheden tussen stappen worden vastgelegd als edges. Het ingebouwde state‑management maakt het mogelijk om tussentijdse resultaten op te slaan en door te geven aan volgende stappen (LangChain, 2024). In dit project heb ik LangGraph alleen conceptueel behandeld, maar in een vervolg zou ik graag een volledige RNA‑seq workflow modelleren in LangGraph, inclusief branching, parallelle stappen en automatische toolselectie.</p>
+<p>Door deze vervolgstappen te realiseren, kan mijn project uitgroeien tot een volledig AI‑gestuurde workflow‑engine die bioinformatica‑analyses reproduceerbaar, transparant en intelligent maakt.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="toekomstgerichte-vragen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="guerilla-analytics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "scroll_highlight": true
+  },
+  "toc_depth": 2
+});
+});
+</script>
+
+</body>
+
+</html>
